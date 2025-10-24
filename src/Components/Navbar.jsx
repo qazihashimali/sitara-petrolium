@@ -36,8 +36,8 @@ const Navbar = () => {
     {
       title: "Lubricants",
       items: [
-        { name: "Automotive Engine Oils", path: "/lubricants/automotive-oils" },
-        { name: "Industrial Lubricants", path: "/lubricants/industrial" },
+        { name: "Automotive Engine Oils", path: "/automotive-engine" },
+        { name: "Industrial Lubricants", path: "/lubricants" },
         { name: "Engine Oil Insights", path: "/lubricants/insights" },
         { name: "Product Catalog", path: "/lubricants/catalog" },
       ],

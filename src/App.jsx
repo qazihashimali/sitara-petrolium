@@ -11,6 +11,8 @@ import SustainabilityInitiatives from "./Pages/SustainabilityInitiatives";
 import WhoWeAre from "./Pages/WhoWeAre";
 import FuelProduct from "./Pages/FuelProducts";
 import BecomeADealer from "./Pages/BecomeADealer";
+import IndustrialLubricants from "./Pages/IndustrialLubricant";
+import AutomotiveEngineOils from "./Pages/AutomotiveEngineOils";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/sustainability" element={<SustainabilityInitiatives />} />
         <Route path="/fuel-products" element={<FuelProduct />} />
         <Route path="/dealer" element={<BecomeADealer />} />
+        <Route path="/lubricants" element={<IndustrialLubricants />} />
+        <Route path="/automotive-engine" element={<AutomotiveEngineOils />} />
       </Routes>
       <Footer />
     </>
