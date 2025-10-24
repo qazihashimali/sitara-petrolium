@@ -1,104 +1,122 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { images } from "../assets/assets";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const location = useLocation();
 
   const navItems = [
     {
       title: "About Us",
       items: [
-        "Who We Are",
-        "Our Operations",
-        "Board of Directors",
-        "Corporate Information",
-        "Health, Safety & Environment (HSE)",
-        "Sustainability Initiatives",
+        { name: "Who We Are", path: "/who-we-are" },
+        { name: "Our Operations", path: "/about/operations" },
+        { name: "Board of Directors", path: "/directors" },
+        { name: "Our Management", path: "/management" },
+        { name: "Corporate Information", path: "/corporate-info" },
+        { name: "Health, Safety & Environment (HSE)", path: "/health-safety" },
+        { name: "Sustainability Initiatives", path: "/sustainability" },
       ],
     },
     {
       title: "Fuel & Facilities",
       items: [
-        "Retail Network",
-        "Fuel Products",
-        "Become a Dealer",
-        "Industrial Fuel Solutions",
+        { name: "Retail Network", path: "/fuel/retail-network" },
+        { name: "Fuel Products", path: "/fuel-products" },
+        { name: "Become a Dealer", path: "/dealer" },
+        {
+          name: "Industrial Fuel Solutions",
+          path: "/fuel/industrial-solutions",
+        },
       ],
     },
     {
       title: "Lubricants",
       items: [
-        "Automotive Engine Oils",
-        "Industrial Lubricants",
-        "Engine Oil Insights",
-        "Product Catalog",
+        { name: "Automotive Engine Oils", path: "/lubricants/automotive-oils" },
+        { name: "Industrial Lubricants", path: "/lubricants/industrial" },
+        { name: "Engine Oil Insights", path: "/lubricants/insights" },
+        { name: "Product Catalog", path: "/lubricants/catalog" },
       ],
     },
     {
       title: "Services",
       items: [
-        "Sitara Auto Services (SAS)",
-        "Welcome Convenience Stores",
-        "Car Wash & Total Wash",
-        "Clean & Fresh Restrooms",
-        "Food & Dining",
+        { name: "Sitara Auto Services (SAS)", path: "/services/sas" },
+        {
+          name: "Welcome Convenience Stores",
+          path: "/services/convenience-stores",
+        },
+        { name: "Car Wash & Total Wash", path: "/services/car-wash" },
+        { name: "Clean & Fresh Restrooms", path: "/services/restrooms" },
+        { name: "Food & Dining", path: "/services/food-dining" },
       ],
     },
     {
       title: "Digital Payment Solutions",
-      items: ["Sitara Mobile App"],
+      items: [{ name: "Sitara Mobile App", path: "/digital/mobile-app" }],
     },
     {
       title: "News & Promotions",
       items: [
-        "Customer Helpline",
-        "Dealer Opportunities",
-        "Feedback & Queries",
-        "Industrial Solutions",
+        { name: "Customer Helpline", path: "/news/customer-helpline" },
+        { name: "Dealer Opportunities", path: "/news/dealer-opportunities" },
+        { name: "Investor Relations", path: "/news/investor-relations" },
+        { name: "Feedback & Queries", path: "/news/feedback" },
+        { name: "Industrial Solutions", path: "/news/industrial-solutions" },
       ],
     },
   ];
+
+  useEffect(() => {
+    setOpenMenu(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
 
   return (
     <nav className="w-full bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img
-            src={images.logo}
-            alt="Logo"
-            className="w-20 h-20 object-contain"
-          />
+        <div className="flex items-center">
+          <Link
+            to="/"
+            onClick={() => {
+              setOpenMenu(false);
+              setActiveDropdown(null);
+            }}
+          >
+            <img
+              src={images.logo}
+              alt="Logo"
+              className="w-20 h-20 object-contain"
+            />
+          </Link>
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 text-lg    text-gray-800">
+        <ul className="hidden md:flex items-center space-x-6 text-lg text-gray-800">
           {navItems.map((menu, index) => (
-            <li
-              key={index}
-              className="relative group"
-              onMouseEnter={() => setActiveDropdown(index)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1 hover:text-primary hover:border-b-2 border-primary transition-colors">
+            <li key={index} className="relative group">
+              <button className="flex items-center gap-1 hover:text-red-600 transition-colors">
                 {menu.title}
                 <ChevronDown size={14} />
               </button>
-              {/* Dropdown */}
-              {activeDropdown === index && (
-                <ul className="absolute left-0 top-full mt-2 w-52 bg-white border border-primary rounded-md shadow-lg">
-                  {menu.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white cursor-pointer transition-colors"
+
+              <ul className="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-2 transition-all duration-200 z-50">
+                {menu.items.map((item, i) => (
+                  <li key={i}>
+                    <Link
+                      to={item.path}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-600 hover:text-white transition-colors"
                     >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
@@ -113,41 +131,55 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {openMenu && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          {navItems.map((menu, index) => (
-            <div key={index} className="border-b border-gray-100">
-              <button
-                onClick={() =>
-                  setActiveDropdown(activeDropdown === index ? null : index)
-                }
-                className="w-full flex justify-between items-center px-4 py-3 text-gray-800 font-semibold text-sm"
-              >
-                {menu.title}
-                <ChevronDown
-                  size={14}
-                  className={`transition-transform ${
-                    activeDropdown === index ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {activeDropdown === index && (
-                <ul className="bg-gray-50">
-                  {menu.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="px-6 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white cursor-pointer"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+      {/* Mobile Menu with smooth transition */}
+      <div
+        className={`md:hidden bg-white border-t border-gray-200 overflow-hidden transition-all duration-500 ease-in-out ${
+          openMenu ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        {navItems.map((menu, index) => (
+          <div key={index} className="border-b border-gray-100">
+            <button
+              onClick={() =>
+                setActiveDropdown(activeDropdown === index ? null : index)
+              }
+              className="w-full flex justify-between items-center px-4 py-3 text-gray-800 font-semibold text-sm"
+            >
+              {menu.title}
+              <ChevronDown
+                size={14}
+                className={`transition-transform ${
+                  activeDropdown === index ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {/* Dropdown items with smooth fade */}
+            <ul
+              className={`bg-gray-50 transition-all duration-500 ease-in-out overflow-hidden ${
+                activeDropdown === index
+                  ? "max-h-[500px] opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {menu.items.map((item, i) => (
+                <li key={i}>
+                  <Link
+                    to={item.path}
+                    onClick={() => {
+                      setOpenMenu(false);
+                      setActiveDropdown(null);
+                    }}
+                    className="block px-6 py-2 text-sm text-gray-700 hover:bg-red-600 hover:text-white transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </nav>
   );
 };

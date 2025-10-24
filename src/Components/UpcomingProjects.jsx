@@ -123,7 +123,7 @@ const UpcomingProjects = () => {
 
         {/* Desktop Grid | Mobile Horizontal Scroll */}
         <div className="mt-10">
-          <div className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          <div className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10">
             {projects.map((project) => (
               <div
                 key={project.id}
