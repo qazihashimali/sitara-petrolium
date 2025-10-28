@@ -3,7 +3,7 @@ import { images } from "../assets/assets"; // import all assets
 
 const Hero = () => {
   // Use imported images instead of URLs
-  const imageList = [images.hero4, images.hero2, images.hero3, images.hero5];
+  const imageList = [images.hero1, images.hero2, images.hero3, images.hero4];
 
   const [current, setCurrent] = useState(0);
 
@@ -28,6 +28,7 @@ const Hero = () => {
             src={src}
             alt={`Slide ${index + 1}`}
             className="w-full h-[70vh] md:h-[80vh] object-cover flex-shrink-0"
+            style={{ objectPosition: "center center" }}
           />
         ))}
       </div>

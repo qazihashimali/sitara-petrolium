@@ -6,7 +6,7 @@ const projects = [
   {
     id: 1,
     title: "New Oil Storage",
-    img: "https://www.azom.com/images/Article_Images/ImageForArticle_19481_15959239352471861.png",
+    img: "New-oil-storage.jpg",
     link: "#",
   },
   {
@@ -48,7 +48,7 @@ const projects = [
   {
     id: 8,
     title: "EV Charging Stations",
-    img: "https://avatars.mds.yandex.net/i?id=59719bc30dc6fd0a094049cc26aac2e540c7fb7010cffeac-12527616-images-thumbs&n=13",
+    img: "EV-charger.jpg",
     link: "#",
   },
 ];
