@@ -3,19 +3,19 @@ import React from "react";
 export default function SitaraRestrooms() {
   const features = [
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/941/941414.png",
+      // icon: "https://cdn-icons-png.flaticon.com/512/941/941414.png",
       title: "Hygienic Facilities",
       description:
         "Our restrooms are sanitized multiple times a day, ensuring a clean and pleasant experience every visit.",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/3082/3082031.png",
+      // icon: "https://cdn-icons-png.flaticon.com/512/3082/3082031.png",
       title: "Comfort for Everyone",
       description:
         "Separate facilities for men, women, and differently-abled guests, ensuring accessibility and privacy for all.",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      // icon: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
       title: "Modern Amenities",
       description:
         "Equipped with automated hand dryers, touchless taps, mirrors, and ambient lighting for a modern experience.",
@@ -33,9 +33,9 @@ export default function SitaraRestrooms() {
           Comfort. Cleanliness. Care.
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Sitara Restrooms are designed to provide travelers and families
-          with a spotless, refreshing, and safe experience — maintained
-          around the clock for your comfort.
+          Sitara Restrooms are designed to provide travelers and families with a
+          spotless, refreshing, and safe experience — maintained around the
+          clock for your comfort.
         </p>
       </section>
 
@@ -106,8 +106,8 @@ export default function SitaraRestrooms() {
 
       {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Sitara Petroleum & Logistics — Clean & Fresh Restrooms.
-        All rights reserved.
+        © {new Date().getFullYear()} Sitara Petroleum & Logistics — Clean &
+        Fresh Restrooms. All rights reserved.
       </footer>
     </div>
   );
