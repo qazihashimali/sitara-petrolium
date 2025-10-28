@@ -63,7 +63,7 @@ const Navbar = () => {
           name: "Welcome Convenience Stores",
           path: "/Services/convenience-stores",
         },
-        { name: "Car Wash & Total Wash", path: "/Services/car-wash" },
+        { name: "Car Wash & Detailing", path: "/Services/car-wash" },
         { name: "Clean & Fresh Restrooms", path: "/Services/restrooms" },
         { name: "Food & Dining", path: "/Services/food-dining" },
       ],

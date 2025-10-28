@@ -27,13 +27,13 @@ export default function SitaraCarWash() {
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-20 text-center">
         <h2 className="text-red-600 text-lg sm:text-xl font-semibold tracking-widest mb-2">
-          SITARA CAR WASH & TOTAL WASH
+          SITARA CAR WASH & Detailing
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
           Sparkling Clean. Every Time.
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Sitara Car Wash & Total Wash offers quick, eco-friendly, and
+          Sitara Car Wash & Detailing offers quick, eco-friendly, and
           high-quality cleaning services — keeping your car spotless and shining
           like new, every single day.
         </p>
@@ -74,7 +74,7 @@ export default function SitaraCarWash() {
               Advanced Cleaning Technology, Expert Hands
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              At Sitara Car Wash & Total Wash, we combine professional expertise
+              At Sitara Car Wash & Detailing, we combine professional expertise
               with modern equipment and eco-safe cleaning agents to give your
               vehicle the care it deserves.
             </p>
