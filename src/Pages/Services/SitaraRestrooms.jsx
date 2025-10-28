@@ -3,19 +3,19 @@ import React from "react";
 export default function SitaraRestrooms() {
   const features = [
     {
-      // icon: "https://cdn-icons-png.flaticon.com/512/941/941414.png",
+      img: "/Hygienic-Facilities.png",
       title: "Hygienic Facilities",
       description:
         "Our restrooms are sanitized multiple times a day, ensuring a clean and pleasant experience every visit.",
     },
     {
-      // icon: "https://cdn-icons-png.flaticon.com/512/3082/3082031.png",
+      img: "https://images.unsplash.com/photo-1603874972745-56d46c8a68f4?auto=format&fit=crop&w=800&q=80",
       title: "Comfort for Everyone",
       description:
         "Separate facilities for men, women, and differently-abled guests, ensuring accessibility and privacy for all.",
     },
     {
-      // icon: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      img: "/Modern-Amenities.png",
       title: "Modern Amenities",
       description:
         "Equipped with automated hand dryers, touchless taps, mirrors, and ambient lighting for a modern experience.",
@@ -39,24 +39,26 @@ export default function SitaraRestrooms() {
         </p>
       </section>
 
-      {/* FEATURES GRID - MATCHING FOOD & DINING STYLE */}
+      {/* FEATURES GRID */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6 pb-20">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all p-8 flex flex-col items-center text-center"
+            className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all overflow-hidden"
           >
             <img
-              src={feature.icon}
+              src={feature.img}
               alt={feature.title}
-              className="w-16 h-16 mb-5"
+              className="w-full h-48 object-cover"
             />
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              {feature.title}
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              {feature.description}
-            </p>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
           </div>
         ))}
       </section>
@@ -89,7 +91,7 @@ export default function SitaraRestrooms() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="text-center py-20 px-6 max-w-6xl mx-auto">
+      {/* <section className="text-center py-20 px-6 max-w-6xl mx-auto">
         <div className="bg-white border border-gray-200 rounded-2xl shadow-sm py-12 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Experience Clean & Fresh Comfort
@@ -102,7 +104,7 @@ export default function SitaraRestrooms() {
             Find Nearest Station
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">

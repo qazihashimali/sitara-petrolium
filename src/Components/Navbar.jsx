@@ -70,7 +70,15 @@ const Navbar = () => {
     },
     {
       title: "Digital Payment Solutions",
-      items: [{ name: "Sitara Mobile App", path: "/Digital/mobile-app" }],
+      items: [
+        { name: "Sitara Mobile App", path: "/Digital/mobile-app" },
+        {
+          name: "Fleet Payment Solutions",
+          path: "/Digital/fleet-payment-solutions",
+        },
+        { name: "Corporate Accounts", path: "/Digital/corporate-accounts" },
+        { name: "Digital Fuel Cards", path: "/Digital/digital-fuel-cards" },
+      ],
     },
     {
       title: "News & Promotions",

@@ -3,19 +3,19 @@ import React from "react";
 export default function SitaraConvenienceStore() {
   const features = [
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      img: "/EV-charger.jpg",
       title: "Snacks & Beverages",
       description:
         "Refresh yourself with a wide selection of chips, juices, coffee, and more — anytime on the go.",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/3082/3082009.png",
+      img: "/store-essentials.jpg",
       title: "Daily Essentials",
       description:
         "Find basic groceries, toiletries, and home products for your daily convenience.",
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/2882/2882567.png",
+      img: "/store-travel.jpg",
       title: "Travel Accessories",
       description:
         "Everything you need for your trip — phone chargers, umbrellas, energy bars, and more.",
@@ -39,18 +39,26 @@ export default function SitaraConvenienceStore() {
         </p>
       </section>
 
-      {/* FEATURES GRID (Unified Card Design) */}
-      <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6 pb-20">
+      {/* FEATURES GRID — same design as Auto Service */}
+      <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 pb-20">
         {features.map((item, i) => (
           <div
             key={i}
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all p-8 flex flex-col items-center text-center"
+            className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-lg transition-all p-3 flex flex-col items-center text-center transform hover:-translate-y-1"
           >
-            <img src={item.icon} alt={item.title} className="w-16 h-16 mb-5" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+            <div className="mb-6">
+              <img
+                src={item.img}
+                alt={item.title}
+                className="h-64 w-full object-cover rounded-2xl shadow-md mx-auto mb-6"
+              />
+            </div>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               {item.title}
             </h3>
-            <p className="text-gray-600 leading-relaxed">{item.description}</p>
+            <p className="text-gray-600 text-base leading-relaxed">
+              {item.description}
+            </p>
           </div>
         ))}
       </section>
@@ -82,9 +90,9 @@ export default function SitaraConvenienceStore() {
         </div>
       </section>
 
-      {/* CTA SECTION (Matching All Other Components) */}
-      <section className="text-center py-20 px-6 max-w-6xl mx-auto">
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm py-12 px-6">
+      {/* CTA SECTION */}
+      {/* <section className="text-center py-20 px-6 max-w-6xl mx-auto">
+        <div className="bg-white border border-gray-200 rounded-3xl shadow-md py-12 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Visit Sitara Convenience Store Today
           </h2>
@@ -96,7 +104,7 @@ export default function SitaraConvenienceStore() {
             Locate Nearest Store
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">

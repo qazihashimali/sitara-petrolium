@@ -25,6 +25,9 @@ import SitaraCarWash from "./Pages/Services/SitaraCarWash";
 import SitaraRestrooms from "./Pages/Services/SitaraRestrooms";
 import FoodAndDining from "./Pages/Services/FoodAndDining";
 import MobileAppComingSoon from "./Pages/DigitalPaymentSolution/MobileAppComingSoon";
+import DigitalFuelCards from "./Pages/DigitalPaymentSolution/DigitalFuelCards";
+import FleetPaymentSolutions from "./Pages/DigitalPaymentSolution/FleetPaymentSolutions";
+import CorporateAccounts from "./Pages/DigitalPaymentSolution/CorporateAccounts";
 import CustomerHelpline from "./Pages/News&Promotions/CustomerHelpline";
 import DealerOpportunities from "./Pages/News&Promotions/DealerOpportunities";
 import InvestorRelations from "./Pages/News&Promotions/InvestorRelations";
@@ -85,6 +88,18 @@ const App = () => {
         <Route path="/services/food-dining" element={<FoodAndDining />} />
         // Digital Payment Solutions Routes
         <Route path="/digital/mobile-app" element={<MobileAppComingSoon />} />
+        <Route
+          path="/digital/digital-fuel-cards"
+          element={<DigitalFuelCards />}
+        />
+        <Route
+          path="/digital/fleet-payment-solutions"
+          element={<FleetPaymentSolutions />}
+        />
+        <Route
+          path="/digital/corporate-accounts"
+          element={<CorporateAccounts />}
+        />
         // News Routes
         <Route path="/news/customer-helpline" element={<CustomerHelpline />} />
         <Route

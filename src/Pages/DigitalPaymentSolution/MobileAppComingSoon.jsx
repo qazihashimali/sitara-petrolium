@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function MobileAppComingSoon() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   function validateEmail(e) {
     return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e);
@@ -11,10 +11,10 @@ export default function MobileAppComingSoon() {
 
   function handleSubscribe(ev) {
     ev.preventDefault();
-    setError('');
-    if (!validateEmail(email)) return setError('Please enter a valid email');
+    setError("");
+    if (!validateEmail(email)) return setError("Please enter a valid email");
     setSubscribed(true);
-    setEmail('');
+    setEmail("");
   }
 
   return (
@@ -25,10 +25,16 @@ export default function MobileAppComingSoon() {
           <h2 className="text-red-600 text-xl sm:text-2xl font-semibold mb-2 tracking-wide">
             MOBILE APP
           </h2>
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-3">Sitara Mobile App</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-3">
+            Sitara Mobile App
+          </h1>
+          <br />
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-4">
+            🚧 Coming Soon
+          </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Coming soon — convenience, safety, and fuel services right in your pocket.
-            Join the waitlist for early access and exclusive launch promos.
+            convenience, safety, and fuel services right in your pocket. Join
+            the waitlist for early access and exclusive launch promos.
           </p>
         </div>
 
@@ -40,16 +46,24 @@ export default function MobileAppComingSoon() {
               <div>
                 <h3 className="text-xl font-semibold">What to expect</h3>
                 <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                  <li>• Find nearest Sitara stations & live fuel availability</li>
+                  <li>
+                    • Find nearest Sitara stations & live fuel availability
+                  </li>
                   <li>• Easy payments, invoices, and loyalty rewards</li>
                   <li>• 24/7 emergency helpline & live support</li>
-                  <li>• Book services — car wash, tyre, quick lube, and EV charging slots</li>
+                  <li>
+                    • Book services — car wash, tyre, quick lube, and EV
+                    charging slots
+                  </li>
                 </ul>
 
                 <div className="mt-8">
-                  <h3 className="text-sm font-medium text-gray-600">Early access</h3>
+                  <h3 className="text-sm font-medium text-gray-600">
+                    Early access
+                  </h3>
                   <p className="text-xs text-gray-500 mt-1">
-                    Join the waitlist to get early access and special promos when we launch.
+                    Join the waitlist to get early access and special promos
+                    when we launch.
                   </p>
 
                   {subscribed ? (
@@ -57,7 +71,10 @@ export default function MobileAppComingSoon() {
                       Thanks — you'll get an email when we launch.
                     </div>
                   ) : (
-                    <form onSubmit={handleSubscribe} className="mt-3 flex gap-2">
+                    <form
+                      onSubmit={handleSubscribe}
+                      className="mt-3 flex gap-2"
+                    >
                       <input
                         className="flex-1 rounded-lg border border-gray-200 p-2"
                         placeholder="Enter your email"
@@ -69,16 +86,24 @@ export default function MobileAppComingSoon() {
                       </button>
                     </form>
                   )}
-                  {error && <div className="text-xs text-red-500 mt-2">{error}</div>}
+                  {error && (
+                    <div className="text-xs text-red-500 mt-2">{error}</div>
+                  )}
                 </div>
               </div>
 
               <div className="mt-6 text-sm text-gray-500">
                 <div className="mb-2">Follow us for updates</div>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="underline">LinkedIn</a>
-                  <a href="#" className="underline">Twitter</a>
-                  <a href="#" className="underline">Facebook</a>
+                  <a href="#" className="underline">
+                    LinkedIn
+                  </a>
+                  <a href="#" className="underline">
+                    Twitter
+                  </a>
+                  <a href="#" className="underline">
+                    Facebook
+                  </a>
                 </div>
               </div>
             </div>
@@ -101,10 +126,16 @@ export default function MobileAppComingSoon() {
                 </div>
 
                 <div className="mt-4 flex gap-3 justify-center">
-                  <a href="#" className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-black text-white text-xs">
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-black text-white text-xs"
+                  >
                     App Store
                   </a>
-                  <a href="#" className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-black text-white text-xs">
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-black text-white text-xs"
+                  >
                     Google Play
                   </a>
                 </div>

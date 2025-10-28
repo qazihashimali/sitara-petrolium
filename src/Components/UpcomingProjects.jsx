@@ -42,7 +42,7 @@ const projects = [
   {
     id: 7,
     title: "Cranes",
-    img: "https://avatars.mds.yandex.net/i?id=456ed40a14a027a71664fc945ba1af79141583c0-5234332-images-thumbs&n=13",
+    img: "Refinery.jpg",
     link: "#",
   },
   {

@@ -1,150 +1,200 @@
 import React, { useState } from "react";
-import { MapPin, Phone, X } from "lucide-react";
+import { MapContainer, GeoJSON, Marker, Tooltip } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { ArrowRightCircle, Phone, MapPin, X } from "lucide-react";
+import pakistanGeoJSON from "./pakistan.geo.json";
+import provincesGeoJSON from "./pakistan-provinces.geo.json";
 import Title from "../../Components/Title";
 
 const stations = [
   {
-    id: 1,
+    id: "bahawalpur",
     name: "Bahawalpur Fuel Station",
-    location: "Bahawalpur, Punjab",
+    coords: [29.3956, 71.6833],
     image: "/images/stations/bahawalpur.jpg",
     phone: "+92 300 1234567",
     address: "Main Road, Bahawalpur, Punjab, Pakistan",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.097058845828!2d71.6833!3d29.3956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3939d3adbf124b45%3A0x7f3d496f5a12a7!2sBahawalpur!5e0!3m2!1sen!2s!4v1700000000000",
   },
   {
-    id: 2,
+    id: "johartown",
     name: "Johar Town, Lahore Station",
-    location: "Johar Town, Lahore",
+    coords: [31.4807, 74.2973],
     image: "/images/stations/johartown.jpg",
     phone: "+92 321 9876543",
     address: "Main Boulevard, Johar Town, Lahore, Pakistan",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.194394504086!2d74.2973!3d31.4807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919077b7a8c1a93%3A0x50b1ad879ca8!2sJohar%20Town%2C%20Lahore!5e0!3m2!1sen!2s!4v1700000000000",
   },
   {
-    id: 3,
+    id: "addaplot",
     name: "Adda Plot Station",
-    location: "Raiwind Road, Lahore",
+    coords: [31.4529, 74.2407],
     image: "/images/stations/addaplot.jpg",
     phone: "+92 345 2223344",
     address: "Adda Plot, Raiwind Road, Lahore, Pakistan",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4561787681793!2d74.2407!3d31.4529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391902b00c3a49a3%3A0xb5e2f1b3fa22!2sAdda%20Plot%2C%20Raiwind%20Road%2C%20Lahore!5e0!3m2!1sen!2s!4v1700000000000",
   },
 ];
 
-const RetailNetwork = () => {
-  const [selected, setSelected] = useState(null);
+const createDivIcon = (isHovered) =>
+  L.divIcon({
+    className: "marker-div-icon",
+    html: `
+      <div class="flex items-center justify-center rounded-full p-1 transform transition-transform duration-150 ${
+        isHovered ? "scale-125" : "scale-100"
+      }">
+        <div class="w-4 h-4 rounded-full bg-blue-600 shadow-lg border-2 border-white"></div>
+      </div>
+    `,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  });
+
+const RetailNetworkMap = () => {
+  const [hoveredId, setHoveredId] = useState(null);
+  const [selectedStation, setSelectedStation] = useState(null);
+  const [tooltipStation, setTooltipStation] = useState(null);
+
+  const countryStyle = {
+    color: "#1d4ed8",
+    weight: 2,
+    fillColor: "#93c5fd",
+    fillOpacity: 0.15,
+  };
+
+  const provinceStyle = {
+    color: "#2563eb",
+    weight: 1.2,
+    fillOpacity: 0,
+    dashArray: "4 3",
+  };
 
   return (
-    <div className="text-gray-800">
+    <div className="w-full text-gray-800">
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-center bg-no-repeat text-white py-28 px-6 text-center"
-        style={{
-          backgroundImage: "url('/assets/retail-network-hero.jpg')", // replace with your hero image
-        }}
+        className="relative bg-cover bg-center bg-no-repeat text-white py-24 px-6 text-center"
+        style={{ backgroundImage: "url('/assets/retail-network-hero.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10">
           <Title
             title="Retail Network"
-            subtitle="A nationwide network of fuel stations delivering quality, convenience, and reliability."
+            subtitle="Explore our nationwide network of fuel stations across Pakistan."
             textColor="text-white"
           />
         </div>
       </section>
 
-      {/* Stations Grid */}
-      <section className="py-20 px-6 md:px-16 bg-gray-50">
+      {/* Map Section */}
+      <section className="py-16 px-6 md:px-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <Title
-            title="Our Retail Locations"
-            subtitle="Explore our growing network of Sitara Petroleum fuel stations across Pakistan."
+            title="Find Our Fuel Stations"
+            subtitle="Click on any location marker to see station details."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {stations.map((station) => (
-              <div
-                key={station.id}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden"
-              >
-                <img
-                  src={station.image}
-                  alt={station.name}
-                  className="h-56 w-full object-cover"
-                />
-                <div className="p-6 text-center">
-                  <h2 className="text-xl font-semibold text-blue-800">
-                    {station.name}
-                  </h2>
-                  <p className="text-gray-600 text-sm flex justify-center items-center gap-1 mt-1">
-                    <MapPin size={16} /> {station.location}
-                  </p>
-                  <button
-                    onClick={() => setSelected(station)}
-                    className="mt-4 px-5 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition"
-                  >
-                    More Info
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div className="mt-10 w-full h-[70vh] md:h-[80vh] rounded-2xl overflow-hidden shadow-lg">
+            <MapContainer
+              center={[30.3753, 69.3451]}
+              zoom={5}
+              minZoom={5.2}
+              maxZoom={12}
+              scrollWheelZoom={true}
+              className="w-full h-full"
+              zoomControl={false}
+            >
+              <GeoJSON data={pakistanGeoJSON} style={countryStyle} />
+              <GeoJSON data={provincesGeoJSON} style={provinceStyle} />
+
+              {stations.map((station) => (
+                <Marker
+                  key={station.id}
+                  position={station.coords}
+                  icon={createDivIcon(hoveredId === station.id)}
+                  eventHandlers={{
+                    click: () => setTooltipStation(station),
+                    mouseover: () => setHoveredId(station.id),
+                    mouseout: () => setHoveredId(null),
+                  }}
+                >
+                  {tooltipStation?.id === station.id && (
+                    <Tooltip
+                      direction="top"
+                      offset={[0, -20]}
+                      opacity={1}
+                      permanent={true}
+                      className="bg-white/95 text-gray-900 border border-gray-200 shadow-xl rounded-lg"
+                    >
+                      <div className="p-2 w-48">
+                        <p className="font-semibold text-sm">{station.name}</p>
+                        <p className="text-xs text-gray-600 truncate">
+                          {station.address.split(",")[0]}
+                        </p>
+                        <button
+                          className="mt-2 w-full flex items-center justify-center gap-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full hover:bg-blue-700 transition"
+                          onClick={() => {
+                            setSelectedStation(station);
+                            setTooltipStation(null);
+                          }}
+                        >
+                          View Details <ArrowRightCircle size={14} />
+                        </button>
+                      </div>
+                    </Tooltip>
+                  )}
+                </Marker>
+              ))}
+            </MapContainer>
           </div>
         </div>
       </section>
 
       {/* Modal */}
-      {selected && (
+      {selectedStation && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
-          <div className="bg-white rounded-2xl shadow-lg w-[90%] md:w-[700px] max-h-[90vh] overflow-y-auto relative">
+          <div className="relative w-[90%] md:w-[700px] max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl bg-white">
+            {/* Close button */}
             <button
-              onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              onClick={() => setSelectedStation(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10 hover:cursor-pointer"
             >
               <X size={24} />
             </button>
 
+            {/* Image */}
             <img
-              src={selected.image}
-              alt={selected.name}
+              src={selectedStation.image}
+              alt={selectedStation.name}
               className="w-full h-56 object-cover rounded-t-2xl"
             />
-            <div className="p-6">
+
+            {/* Details */}
+            <div className="p-6 bg-white">
               <Title
-                title={selected.name}
-                subtitle={selected.location}
+                title={selectedStation.name}
+                subtitle={selectedStation.address.split(",")[1] || ""}
                 align="left"
               />
               <p className="flex items-center gap-2 text-gray-700 mb-2">
                 <Phone size={18} className="text-blue-600" />
-                {selected.phone}
+                {selectedStation.phone}
               </p>
               <p className="flex items-center gap-2 text-gray-700 mb-4">
                 <MapPin size={18} className="text-blue-600" />
-                {selected.address}
+                {selectedStation.address}
               </p>
-
-              {/* Google Map */}
-              <div className="w-full h-64 rounded-lg overflow-hidden">
-                <iframe
-                  src={selected.mapSrc}
-                  width="100%"
-                  height="100%"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={selected.name}
-                ></iframe>
-              </div>
             </div>
           </div>
         </div>
       )}
+
+      <style>{`
+        .marker-div-icon { background: transparent; }
+        .leaflet-tooltip {
+          pointer-events: auto !important;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default RetailNetwork;
+export default RetailNetworkMap;

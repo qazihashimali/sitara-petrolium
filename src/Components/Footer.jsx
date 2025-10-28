@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,11 +13,46 @@ const Footer = () => {
               About Sitara Petroleum
             </h4>
             <ul className="space-y-4">
-              <li>Company Overview</li>
-              <li>Leadership & Governance</li>
-              <li>Corporate Structure</li>
-              <li>Health, Safety & Environment</li>
-              <li>Sustainability Commitments</li>
+              <li>
+                <Link
+                  to="/About/who-we-are"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Company Overview
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/About/management"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Leadership & Governance
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/About/corporate-info"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Corporate Structure
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/About/health-safety"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Health, Safety & Environment
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/About/sustainability"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Sustainability Commitments
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -26,11 +62,46 @@ const Footer = () => {
               Fuels & Operations
             </h4>
             <ul className="space-y-4">
-              <li>Retail Network</li>
-              <li>Fuel Products & Pricing</li>
-              <li>Industrial Fuel Solutions</li>
-              <li>Commercial Partnerships</li>
-              <li>Become a Dealer</li>
+              <li>
+                <Link
+                  to="/Fuel/retail-network"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Retail Network
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Fuel/fuel-products"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Fuel Products & Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Fuel/industrial--fuel-solutions"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Industrial Fuel Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Fuel/dealer"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Commercial Partnerships
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Fuel/dealer"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Become a Dealer
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -38,11 +109,46 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Lubricants</h4>
             <ul className="space-y-4">
-              <li>Automotive Lubricants</li>
-              <li>Industrial Lubricants</li>
-              <li>Technical Specifications</li>
-              <li>Product Catalogue</li>
-              <li>Distributor Support</li>
+              <li>
+                <Link
+                  to="/Lubricants/automotive-engine"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Automotive Lubricants
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Lubricants/industrial-lubricants"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Industrial Lubricants
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Lubricants/insights"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Technical Specifications
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Lubricants/catalog"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Product Catalogue
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Lubricants/distributer-support"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Distributor Support
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -52,11 +158,46 @@ const Footer = () => {
               Customer Services
             </h4>
             <ul className="space-y-4">
-              <li>Sitara Auto Service Centers</li>
-              <li>Welcome Mart Stores</li>
-              <li>Car Wash & Maintenance</li>
-              <li>Rest Area Facilities</li>
-              <li>Food & Hospitality</li>
+              <li>
+                <Link
+                  to="/Services/sas"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Sitara Auto Service Centers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Services/convenience-stores"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Welcome Mart Stores
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Services/car-wash"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Car Wash & Maintenance
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Services/restrooms"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Rest Area Facilities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Services/food-dining"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Food & Hospitality
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -66,10 +207,38 @@ const Footer = () => {
               Digital Solutions
             </h4>
             <ul className="space-y-4">
-              <li>Sitara App</li>
-              <li>Fleet Payment Solutions</li>
-              <li>Corporate Accounts</li>
-              <li>Digital Fuel Cards</li>
+              <li>
+                <Link
+                  to="/Digital/mobile-app"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Sitara App
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Digital/fleet-payment-solutions"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Fleet Payment Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Digital/corporate-accounts"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Corporate Accounts
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Digital/digital-fuel-cards"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Digital Fuel Cards
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -79,28 +248,56 @@ const Footer = () => {
               Media & Support
             </h4>
             <ul className="space-y-4">
-              <li>Latest News</li>
-              <li>Press Releases & Tenders</li>
-              <li>Promotions & Campaigns</li>
-              <li>Customer Care</li>
+              <li>
+                <Link
+                  to="/News/customer-helpline"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Latest News
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/News/investor-relations"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Press Releases & Tenders
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/News/dealer-opportunities"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Promotions & Campaigns
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/News/feedback"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Customer Care
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Links */}
         <div className="border-t border-gray-300 pt-4 text-sm text-gray-500 text-center">
-          <a href="#" className="mr-4 hover:underline">
+          <Link to="/privacy-policy" className="mr-4 hover:underline">
             Privacy Policy
-          </a>
-          <a href="#" className="mr-4 hover:underline">
+          </Link>
+          <Link to="/terms" className="mr-4 hover:underline">
             Terms & Legal Notice
-          </a>
-          <a href="#" className="mr-4 hover:underline">
+          </Link>
+          <Link to="/jamapunji" className="mr-4 hover:underline">
             Jamapunji
-          </a>
-          <a href="#" className="hover:underline">
+          </Link>
+          <Link to="/secp-helpline" className="hover:underline">
             SECP Helpline
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
