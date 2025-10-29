@@ -5,20 +5,26 @@ export default function SitaraConvenienceStore() {
     {
       img: "/EV-charger.jpg",
       title: "Snacks & Beverages",
-      description:
-        "Refresh yourself with a wide selection of chips, juices, coffee, and more — anytime on the go.",
+      description: `Fuel your journey with a wide variety of refreshments and snacks, perfect for any time of day. Grab a coffee, chilled juice, a soft drink, or your favourite pack of chips — freshly stocked and ready when you are.
+✔ Chilled drinks & bottled water
+✔ Hot coffee & tea corner
+✔ Chips, biscuits, chocolates, and more`,
     },
     {
       img: "/store-essentials.jpg",
       title: "Daily Essentials",
-      description:
-        "Find basic groceries, toiletries, and home products for your daily convenience.",
+      description: `Need something for home or hygiene? We’ve got you covered. Our stores offer groceries, toiletries, and basic home care items, so you never have to make an extra stop.
+✔ Toothpaste, soap, tissue, detergents
+✔ Bread, milk, eggs, and pantry staples
+✔ Baby care & feminine hygiene products`,
     },
     {
       img: "/store-travel.jpg",
       title: "Travel Accessories",
-      description:
-        "Everything you need for your trip — phone chargers, umbrellas, energy bars, and more.",
+      description: `Hit the road prepared. From phone chargers to energy bars, we stock travel-friendly products that keep you going with ease.
+✔ Power banks, chargers, mobile accessories
+✔ First-aid basics, umbrellas, face masks
+✔ Sunglasses, pain relief, energy drinks & bars`,
     },
   ];
 
@@ -30,16 +36,16 @@ export default function SitaraConvenienceStore() {
           SITARA CONVENIENCE STORE
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
-          Your Everyday Essentials — Anytime, Anywhere
+          Your Everyday Essentials, Anytime, Anywhere
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          From snacks and drinks to travel must-haves, Sitara Convenience Store
-          brings comfort and choice to your journey. Stop by for quick, quality
-          essentials 24/7.
+          From snacks and drinks to travel essentials, Sitara Convenience Store
+          provides comfort and choice for your journey. Stop by for quick,
+          quality essentials, open 24/7.
         </p>
       </section>
 
-      {/* FEATURES GRID — same design as Auto Service */}
+      {/* FEATURES GRID */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 pb-20">
         {features.map((item, i) => (
           <div
@@ -56,7 +62,7 @@ export default function SitaraConvenienceStore() {
             <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               {item.title}
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">
               {item.description}
             </p>
           </div>
@@ -76,35 +82,33 @@ export default function SitaraConvenienceStore() {
               Comfort Meets Convenience
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sitara Convenience Stores are designed for travelers and local
-              customers alike — providing quick access to quality products,
-              refreshments, and essentials with a clean, friendly atmosphere.
+              Sitara Convenience Stores are designed to serve both on-the-go
+              travellers and local walk-in customers. We offer a clean,
+              accessible environment, friendly staff, and fast service.
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>✅ 24/7 availability at select Sitara stations</li>
-              <li>✅ Fresh snacks and chilled beverages</li>
-              <li>✅ Friendly staff & clean environment</li>
-              <li>✅ Fast checkout and digital payment options</li>
+              <li>• 24/7 availability at select Sitara Petroleum stations</li>
+              <li>• Fresh snacks and chilled beverages</li>
+              <li>• Polite, helpful staff & clean interior</li>
+              <li>• Fast checkout with digital payment options</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* CTA SECTION */}
-      {/* <section className="text-center py-20 px-6 max-w-6xl mx-auto">
+      <section className="text-center py-20 px-6 max-w-6xl mx-auto">
         <div className="bg-white border border-gray-200 rounded-3xl shadow-md py-12 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Visit Sitara Convenience Store Today
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Whether you’re fueling up or taking a break, Sitara makes it easy to
-            grab what you need — quick, clean, and convenient.
+            Whether you’re fueling up, taking a break, or picking up a quick
+            item on the way home, Sitara Convenience Store makes it easy to grab
+            what you need. Quick. Clean. Convenient.
           </p>
-          <button className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-all">
-            Locate Nearest Store
-          </button>
         </div>
-      </section> */}
+      </section>
 
       {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">

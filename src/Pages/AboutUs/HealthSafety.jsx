@@ -45,18 +45,33 @@ const HealthSafety = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner Section */}
-      <div className="relative w-full py-8 px-6 md:px-12 text-center">
-        <h2 className="text-red-600 text-xl sm:text-2xl font-semibold mb-1">
-          HEALTH, SAFETY & ENVIRONMENT
-        </h2>
-        <div className="mb-3">
+      {/* Hero Section */}
+      <section
+        className="relative h-[70vh] flex items-center justify-center text-center text-white"
+        style={{
+          backgroundImage: "url('/Health-safety-banner.png')", // ⬅️ Replace with your actual image path
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 px-6 md:px-12 max-w-4xl mx-auto">
+          <h2 className="text-red-500 text-xl sm:text-2xl font-semibold mb-3 tracking-wide uppercase">
+            Health, Safety & Environment
+          </h2>
+
           <Title
             title="Commitment to Safety & Sustainability"
             subtitle="We believe every incident is preventable. Continuous training and strict safety standards protect our employees, contractors, and communities."
+            align="center"
+            textColor="text-white"
+            subtitleColor="text-gray-200"
           />
         </div>
-      </div>
+      </section>
 
       {/* Core Principles Grid */}
       <section className="py-6 px-6 md:px-12 lg:px-20">

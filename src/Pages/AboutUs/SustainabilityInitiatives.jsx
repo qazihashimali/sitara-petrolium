@@ -14,50 +14,64 @@ const SustainabilityInitiatives = () => {
     {
       icon: <Leaf size={36} className="text-green-600" />,
       title: "Eco-Friendly Energy",
-      desc: "We are investing in cleaner energy solutions such as EV charging stations, solar-assisted operations, and emission control systems at our fuel stations.",
+      desc: "We are investing in cleaner energy solutions to reduce the carbon footprint of our operations. This includes installing electric vehicle (EV) charging stations at key retail locations, using solar-assisted power at fuel stations, and implementing advanced emission control systems to enhance our environmental performance.",
     },
     {
       icon: <Droplets size={36} className="text-blue-500" />,
       title: "Water Conservation",
-      desc: "Through water recycling at service stations and efficient logistics cleaning systems, Sitara Petroleum reduces unnecessary water waste across operations.",
+      desc: "Our fuel stations and logistics facilities use water-recycling systems for vehicle cleaning and maintenance. By optimising water use and reducing waste, we promote resource conservation throughout all operational touchpoints.",
     },
     {
       icon: <Sun size={36} className="text-yellow-500" />,
       title: "Renewable Integration",
-      desc: "Our future growth strategy includes renewable energy integration — solar-powered fuel sites and sustainable lighting infrastructure.",
+      desc: "Sitara Petroleum is dedicated to incorporating renewable energy technologies into its infrastructure. Our long-term strategy includes developing solar-powered fuel stations, installing sustainable lighting systems, and adopting energy-efficient operations to lessen dependence on the grid.",
     },
     {
       icon: <Recycle size={36} className="text-green-500" />,
       title: "Waste Management",
-      desc: "We ensure all oil residues, lubricants, and packaging materials are responsibly handled and recycled to minimize environmental impact.",
+      desc: "We adhere to strict protocols for managing oil residues, used lubricants, and packaging waste. Hazardous materials are processed safely, while recyclable waste is sorted and handled by certified recycling partners, helping us minimise our environmental impact.",
     },
     {
       icon: <Factory size={36} className="text-gray-700" />,
       title: "Sustainable Operations",
-      desc: "Modernized logistics and fuel storage systems are designed to optimize efficiency, reduce emissions, and support long-term energy resilience.",
+      desc: "We are enhancing our systems to improve energy efficiency and reduce emissions across the entire supply chain, from fuel storage to fleet logistics. Our upgraded tanker fleet, automated fueling systems, and digital monitoring tools ensure safer, cleaner, and more reliable energy delivery across Pakistan",
     },
     {
       icon: <HeartHandshake size={36} className="text-red-600" />,
       title: "Community Engagement",
-      desc: "Sitara Petroleum collaborates with local communities for green education, tree plantation drives, and sustainability awareness campaigns.",
+      desc: "We actively engage local communities in sustainability programs that align with our operations. This includes tree-planting campaigns at our locations, green education initiatives in partnership with nearby schools, and awareness drives on clean fueling practices. Environmental stewardship is a shared journey, and we are committed to leading it responsibly",
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner Section */}
-      <div className="relative w-full py-8 px-6 md:px-12 text-center">
-        <h2 className="text-red-600 text-xl sm:text-2xl font-semibold mb-1 tracking-wide">
-          SUSTAINABILITY INITIATIVES
-        </h2>
-        <div className="mb-3">
+      {/*Hero Section */}
+      <section
+        className="relative h-[70vh] flex items-center justify-center text-center text-white"
+        style={{
+          backgroundImage: "url('/Sustainability-Banner.png')", // ⬅️ Replace with your actual image path
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Foreground content */}
+        <div className="relative z-10 px-6 md:px-12 max-w-4xl mx-auto">
+          <h2 className="text-red-500 text-xl sm:text-2xl font-semibold mb-3 tracking-wide uppercase">
+            Sustainability Initiatives
+          </h2>
+
           <Title
             title="Building a Greener Future Together"
-            subtitle="At Sitara Petroleum, sustainability is embedded into our business operations — from eco-friendly fuel infrastructure to responsible community initiatives that protect our environment for generations ahead."
+            subtitle="At Sitara Petroleum, sustainability is not an afterthought; it is integral to how we fuel Pakistan every day. We are dedicated to providing reliable energy while minimizing our environmental impact. From developing EV infrastructure to ensuring ecological responsibility throughout our supply chain, we are committed to preparing for a cleaner tomorrow."
             align="center"
+            textColor="text-white"
+            subtitleColor="text-gray-200"
           />
         </div>
-      </div>
+      </section>
 
       {/* Initiatives Grid */}
       <section className="py-6 px-6 md:px-12 lg:px-20 bg-white">
@@ -84,11 +98,18 @@ const SustainabilityInitiatives = () => {
             Our Sustainability Vision
           </h2>
           <p className="text-sm sm:text-base leading-relaxed mb-5 text-gray-700">
-            Sitara Petroleum aims to drive progress through innovation,
-            integrity, and environmental responsibility. By integrating green
-            technologies, improving logistics efficiency, and nurturing local
-            partnerships, we are ensuring a sustainable energy transition for
-            Pakistan’s future.
+            Sitara Petroleum is committed to the belief that energy leadership
+            should align with environmental accountability. Our vision is to
+            promote sustainable progress through: <br /> - The integration of
+            green technologies <br /> - Efficient fuel logistics <br /> -
+            Partnerships that prioritise community benefits <br /> By balancing
+            performance with responsibility, we aim to shape the future of
+            energy in Pakistan with a clear purpose.
+            <br />
+            <br />
+            With every litre delivered and every initiative launched, we are
+            fueling a more sustainable Pakistan—one step, one station, and one
+            community at a time.
           </p>
           <a
             href="mailto:sustainability@sitarapetroleum.com"

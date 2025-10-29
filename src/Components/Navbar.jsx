@@ -29,7 +29,7 @@ const Navbar = () => {
       items: [
         { name: "Retail Network", path: "/Fuel/retail-network" },
         { name: "Fuel Products", path: "/Fuel/fuel-products" },
-        { name: "Become a Dealer", path: "/Fuel/dealer" },
+        // { name: "Become a Dealer", path: "/Fuel/dealer" },
         {
           name: "Industrial Fuel Solutions",
           path: "/Fuel/industrial--fuel-solutions",
@@ -89,6 +89,10 @@ const Navbar = () => {
         { name: "Feedback & Queries", path: "/News/feedback" },
         { name: "Industrial Solutions", path: "/News/industrial-solutions" },
       ],
+    },
+    {
+      title: "Carrers",
+      items: [{ name: "Customer Helpline", path: "/News/customer-helpline" }],
     },
   ];
 

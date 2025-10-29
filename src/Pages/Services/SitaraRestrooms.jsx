@@ -6,19 +6,19 @@ export default function SitaraRestrooms() {
       img: "/Hygienic-Facilities.png",
       title: "Hygienic Facilities",
       description:
-        "Our restrooms are sanitized multiple times a day, ensuring a clean and pleasant experience every visit.",
+        "Our restrooms are <strong>cleaned and sanitised multiple times a day</strong> using <strong>professional-grade products</strong> and <strong>strict hygiene protocols</strong>. From toilets to touchpoints, every detail is handled with care to ensure a <strong>germ-free, pleasant experience</strong> on every visit.<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li>Frequent sanitisation</li><li>Soap dispensers constantly refilled</li><li>Floor-to-surface disinfection routine</li></ul>",
     },
     {
-      img: "https://images.unsplash.com/photo-1603874972745-56d46c8a68f4?auto=format&fit=crop&w=800&q=80",
+      img: "/Comfort-for-Everyone.png",
       title: "Comfort for Everyone",
       description:
-        "Separate facilities for men, women, and differently-abled guests, ensuring accessibility and privacy for all.",
+        "Sitara restrooms are <strong>inclusive and family-friendly</strong>, featuring <strong>separate facilities for men, women, and guests with disabilities</strong>. We ensure <strong>accessibility, privacy, and ease of use</strong> for all travellers, whether you're on a long road trip or a short stop.<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li>Wheelchair-accessible entry</li><li>Baby-changing stations (at select locations)</li><li>Clearly marked and secure stalls</li></ul>",
     },
     {
       img: "/Modern-Amenities.png",
       title: "Modern Amenities",
       description:
-        "Equipped with automated hand dryers, touchless taps, mirrors, and ambient lighting for a modern experience.",
+        "Enjoy a <strong>clean and convenient restroom experience</strong> with modern features such as:<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li><strong>Touchless taps and flush systems</strong></li><li><strong>Automated hand dryers</strong></li><li><strong>Large, well-lit mirrors</strong></li><li><strong>Fragrance dispensers and fresh ventilation</strong></li><li><strong>Ambient lighting for visibility</strong></li><li><strong>Mirror height suitable for both adults and children</strong></li><li><strong>Ventilation fans and automatic air fresheners</strong></li></ul>",
     },
   ];
 
@@ -30,13 +30,15 @@ export default function SitaraRestrooms() {
           CLEAN & FRESH RESTROOMS
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
-          Comfort. Cleanliness. Care.
+          <strong>Comfort. Cleanliness. Care.</strong>
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Sitara Restrooms are designed to provide travelers and families with a
-          spotless, refreshing, and safe experience — maintained around the
-          clock for your comfort.
-        </p>
+        <p
+          className="text-gray-600 max-w-2xl mx-auto leading-relaxed"
+          dangerouslySetInnerHTML={{
+            __html:
+              "<strong>Sitara Restrooms</strong> aim to provide <strong>travellers, families, and commuters</strong> with a spotless, refreshing, and safe experience — maintained around the clock for your comfort and peace of mind.",
+          }}
+        />
       </section>
 
       {/* FEATURES GRID */}
@@ -55,9 +57,10 @@ export default function SitaraRestrooms() {
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
+              <p
+                className="text-gray-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: feature.description }}
+              />
             </div>
           </div>
         ))}
@@ -73,43 +76,30 @@ export default function SitaraRestrooms() {
           />
           <div>
             <h2 className="text-3xl font-bold mb-4">
-              Clean Spaces for a Better Journey
+              <strong>Clean Spaces for a Better Journey</strong>
             </h2>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              Sitara ensures every stop feels refreshing. Our restrooms are
-              maintained with industry-grade cleaning products and real-time
-              cleanliness monitoring to guarantee your peace of mind.
-            </p>
+            <p
+              className="text-gray-600 mb-4 leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html:
+                  "Sitara Petroleum believes every stop should feel like a <strong>refresh</strong> — not just a pause. Our restrooms are cleaned with <strong>industry-grade products</strong>, staffed by <strong>dedicated professionals</strong>, and monitored in real-time to keep you <strong>safe and satisfied</strong>.",
+              }}
+            />
             <ul className="space-y-2 text-sm text-gray-700">
               <li>✅ Regular cleaning every hour</li>
               <li>✅ Dedicated housekeeping staff</li>
-              <li>✅ Fragrance & ventilation systems</li>
+              <li>✅ Fragrance and ventilation systems</li>
               <li>✅ Touch-free fixtures for hygiene</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      {/* <section className="text-center py-20 px-6 max-w-6xl mx-auto">
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm py-12 px-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Experience Clean & Fresh Comfort
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Visit Sitara stations nationwide and enjoy modern, hygienic, and
-            family-friendly restroom facilities — because your comfort matters.
-          </p>
-          <button className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-all">
-            Find Nearest Station
-          </button>
-        </div>
-      </section> */}
-
       {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Sitara Petroleum & Logistics — Clean &
-        Fresh Restrooms. All rights reserved.
+        © {new Date().getFullYear()} Sitara Petroleum —{" "}
+        <span className="font-semibold">Clean & Fresh Restrooms</span>. All
+        rights reserved.
       </footer>
     </div>
   );

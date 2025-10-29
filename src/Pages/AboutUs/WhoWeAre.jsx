@@ -1,24 +1,43 @@
 import React from "react";
-import { Target, Eye, HeartHandshake } from "lucide-react";
+import { Target, Eye, Scale, ShieldCheck, Award, Mountain } from "lucide-react";
 import Title from "../../Components/Title";
 import { images } from "../../assets/assets";
 
 const WhoWeAre = () => {
   const infoCards = [
     {
-      title: "Our Mission",
-      desc: "To deliver superior petroleum and logistics solutions that fuel industries and communities while maintaining the highest standards of safety, efficiency, and sustainability.",
-      icon: <Target size={40} className="text-red-600" />,
-    },
-    {
       title: "Our Vision",
-      desc: "To lead Pakistan’s energy transition by embracing cleaner technologies, advancing infrastructure, and promoting responsible energy management for a sustainable tomorrow.",
+      desc: "To be a leading integrated petroleum, retail, logistics & storage company known for reliability, efficiency, safety and service excellence.",
       icon: <Eye size={40} className="text-blue-600" />,
     },
     {
+      title: "Our Mission",
+      desc: "Serving the industry through a robust retail network providing high quality petroleum products and services including logistics and storage solutions.",
+      icon: <Target size={40} className="text-red-600" />,
+    },
+    {
       title: "Our Values",
-      desc: "Integrity, safety, innovation, and sustainability guide every action we take — ensuring we deliver excellence and create lasting value for our customers and communities.",
-      icon: <HeartHandshake size={40} className="text-green-600" />,
+      desc: "Integrity, Courage, Service Excellence, and Safety define our culture and guide every decision we make as we build a sustainable and responsible future.",
+      icon: <Scale size={40} className="text-green-600" />,
+    },
+  ];
+
+  const values = [
+    {
+      icon: <Scale size={36} className="text-green-600" />,
+      title: "Integrity",
+    },
+    {
+      icon: <Mountain size={36} className="text-blue-700" />,
+      title: "Courage",
+    },
+    {
+      icon: <Award size={36} className="text-red-600" />,
+      title: "Service Excellence",
+    },
+    {
+      icon: <ShieldCheck size={36} className="text-purple-600" />,
+      title: "Safety",
     },
   ];
 
@@ -33,22 +52,18 @@ const WhoWeAre = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-        {/* Foreground Text */}
         <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
           <h1 className="text-3xl sm:text-5xl font-bold mb-4">Who We Are</h1>
           <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
-            Empowering Pakistan’s energy future through integrity, innovation,
-            and excellence.
+            Empowering Pakistan’s energy future through reliability, efficiency,
+            safety and service excellence.
           </p>
         </div>
       </section>
 
       {/* 🏗️ About Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12 px-6 md:px-12 max-w-7xl mx-auto">
-        {/* Left Side Text */}
         <div>
           <h2 className="text-red-600 text-xl sm:text-2xl font-semibold mb-2 tracking-wide">
             About Us
@@ -65,7 +80,6 @@ const WhoWeAre = () => {
           </p>
         </div>
 
-        {/* Right Side Image */}
         <div className="rounded-2xl overflow-hidden shadow-md">
           <img
             src={images.hero3}
@@ -75,25 +89,22 @@ const WhoWeAre = () => {
         </div>
       </div>
 
-      {/* 🏢 Our Company Section */}
-      <section className="py-6 px-6 md:px-12 bg-gray-50">
+      {/* 🏢 Strategic Framework Section */}
+      <section className="py-12 px-6 md:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          {/* Section Heading */}
           <div className="md:w-1/2 mb-8">
             <h3 className="text-red-600 text-xl sm:text-2xl font-semibold mb-4 tracking-wide">
-              Our Company
+              Our Strategic Framework
             </h3>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
-              Sitara Petroleum operates with a clear vision — to be a key player
-              in Pakistan’s evolving energy landscape. Through continuous
-              innovation, logistics expansion, and sustainable development, we
-              aim to contribute to the nation’s economic growth while upholding
-              global environmental and safety standards.
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+              Guided by a strong vision, mission, and core values, Sitara
+              Petroleum continues to strengthen its position as a trusted name
+              in the petroleum and logistics industry.
             </p>
           </div>
 
-          {/* Info Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mission, Vision, Values Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             {infoCards.map((item, index) => (
               <div
                 key={index}
@@ -106,6 +117,19 @@ const WhoWeAre = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {item.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Values Icons */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div className="mb-3">{value.icon}</div>
+                <p className="font-medium text-gray-800">{value.title}</p>
               </div>
             ))}
           </div>

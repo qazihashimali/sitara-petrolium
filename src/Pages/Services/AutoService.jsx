@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Alert from "../../Components/Alert";
+import { motion } from "framer-motion";
 
 export default function SitaraAutoService() {
   const [showForm, setShowForm] = useState(false);
@@ -16,19 +17,19 @@ export default function SitaraAutoService() {
       img: "/Oil-Filter.jpg",
       title: "Oil & Filter Change",
       description:
-        "Keep your engine performing at its best with premium oil and expert filter replacement — fast, efficient, and reliable.",
+        "Keep your engine performing at its best with our premium-grade engine oil and expert filter replacement. Our technicians ensure a fast, clean, and precise service so that you can get back on the road with confidence.",
     },
     {
       img: "/tire-service.jpg",
       title: "Tire Replacement & Balancing",
       description:
-        "Ensure smooth rides with top-quality tires, precision balancing, and alignment services from our skilled technicians.",
+        "Drive smoother and safer with our tyre services, including premium tyre replacements, wheel balancing, and alignment. We make sure your tyres wear evenly and your ride remains vibration-free.\n✔ Branded tyre options\n✔ Computerised balancing\n✔ Alignment & rotation support",
     },
     {
       img: "/brake-inspection.jpg",
       title: "Brake & Safety Inspection",
       description:
-        "Comprehensive brake system checks, pad replacements, and safety diagnostics for confident driving every day.",
+        "Your safety is our priority. We conduct thorough brake system diagnostics, checking pad wear, rotor condition, fluid levels, and making any necessary replacements. This ensures you have complete control and peace of mind.\n✔ Brake pad & disc service\n✔ Safety diagnostics\n✔ Road-readiness assurance",
     },
   ];
 
@@ -37,7 +38,7 @@ export default function SitaraAutoService() {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      ...(name === "city" ? { branch: "" } : {}), // reset branch if city changes
+      ...(name === "city" ? { branch: "" } : {}),
     }));
   };
 
@@ -58,17 +59,22 @@ export default function SitaraAutoService() {
           Reliable Car Care, Trusted by Drivers
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Experience professional maintenance, quick repairs, and genuine care.
-          Sitara Auto Service keeps your vehicle running smoothly with expert
-          technicians, transparent pricing, and trusted quality.
+          At Sitara Auto Service, we provide professional maintenance, quick
+          repairs, and genuine care to keep your vehicle running smoothly. Our
+          expert technicians, transparent pricing, and commitment to quality are
+          all backed by Sitara Petroleum’s high standards.
         </p>
       </div>
 
-      {/* SERVICE CARDS */}
+      {/* SERVICES GRID */}
       <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {services.map((service, i) => (
-          <div
+          <motion.div
             key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            viewport={{ once: true }}
             className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-lg transition-all p-4 flex flex-col items-center text-center transform hover:-translate-y-1"
           >
             <div className="w-full h-56 overflow-hidden rounded-2xl mb-6">
@@ -81,10 +87,10 @@ export default function SitaraAutoService() {
             <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">
               {service.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -94,16 +100,31 @@ export default function SitaraAutoService() {
           Expert Technicians, Quality Service
         </h3>
         <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed text-base">
-          Our service centers feature state-of-the-art diagnostic tools, genuine
-          parts, and certified professionals dedicated to providing efficient
-          and trustworthy car care — every single time.
+          Sitara Auto Service centres are equipped with:
         </p>
         <ul className="text-gray-700 text-base space-y-2 max-w-md mx-auto text-left mb-10">
-          <li>✅ Genuine parts and transparent pricing</li>
-          <li>✅ Express servicing for minimal downtime</li>
-          <li>✅ Comfortable customer waiting area</li>
-          <li>✅ 24/7 roadside assistance at select stations</li>
+          <li>• State-of-the-art diagnostic tools</li>
+          <li>• Genuine parts for every repair</li>
+          <li>• Certified professionals trained across vehicle brands</li>
         </ul>
+        <p className="text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed text-base">
+          We combine speed, transparency, and technical precision to deliver
+          reliable car care every single time.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          Why Choose Sitara Auto Service?
+        </h3>
+        <ul className="text-gray-700 text-base space-y-2 max-w-md mx-auto text-left mb-10">
+          <li>• Genuine parts and transparent pricing</li>
+          <li>• Express service for minimal downtime</li>
+          <li>• Comfortable customer waiting areas</li>
+          <li>
+            • 24/7 roadside assistance available at select Sitara Petroleum
+            stations
+          </li>
+        </ul>
+
         <button
           onClick={() => setShowForm(true)}
           className="bg-red-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-red-700 transition-all hover:cursor-pointer"
@@ -115,7 +136,12 @@ export default function SitaraAutoService() {
       {/* FORM MODAL */}
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-3xl shadow-lg w-full max-w-lg p-8 relative">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white rounded-3xl shadow-lg w-full max-w-lg p-8 relative"
+          >
             <button
               onClick={() => setShowForm(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl hover:cursor-pointer"
@@ -173,7 +199,6 @@ export default function SitaraAutoService() {
                 </select>
               </div>
 
-              {/* ✅ Show Branch only if City selected */}
               {formData.city && (
                 <div className="transition-all duration-300">
                   <label className="block text-gray-700 font-medium mb-2">
@@ -202,11 +227,11 @@ export default function SitaraAutoService() {
                 Confirm Booking
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       )}
 
-      {/* ✅ CUSTOM ALERT */}
+      {/* ALERT */}
       <Alert
         type="success"
         title="Booking Confirmed!"

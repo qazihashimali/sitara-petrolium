@@ -10,7 +10,6 @@ export default function SitaraCarWash() {
     branch: "",
   });
 
-  // ALERT STATE (same pattern as FuelCard)
   const [alert, setAlert] = useState({
     show: false,
     type: "success",
@@ -18,7 +17,6 @@ export default function SitaraCarWash() {
     message: "",
   });
 
-  // City and branch mapping
   const cityBranches = {
     Karachi: ["Sitara Clifton Wash", "DHA Express Wash", "Korangi Auto Spa"],
     Lahore: [
@@ -37,28 +35,33 @@ export default function SitaraCarWash() {
   const services = [
     {
       img: "/EV-charger.jpg",
-      title: "Exterior Wash",
-      description:
-        "Gentle, pressure-controlled washing with premium detergents to protect your car’s paint and shine.",
+      title: "1. Exterior Wash",
+      description: `Our gentle, pressure-controlled washing uses premium detergents that protect your vehicle’s paint while enhancing its shine. The exterior wash process effectively removes dirt, dust, and road grime, leaving your car gleaming and scratch-free.
+- Touch-safe wash techniques
+- Foam and jet wash options
+- Paint-protecting shampoo formulas`,
     },
     {
       img: "/carwash-interior.jpg",
-      title: "Interior Cleaning",
-      description:
-        "Deep vacuuming, dashboard detailing, and odor removal for a fresh, comfortable drive.",
+      title: "2. Interior Cleaning",
+      description: `Breathe easily and drive comfortably with our interior cleaning service. It includes deep vacuuming, dashboard cleaning, seat brushing, and odour elimination, restoring a clean and refreshed cabin environment.
+- Vacuuming of carpets and seats
+- Dashboard and console wipe-down
+- Fragrance spray or deodoriser`,
     },
     {
       img: "/carwash-total.jpg",
-      title: "Total Wash Package",
-      description:
-        "Complete inside-out cleaning, tire polish, underbody wash, and glass shine — all in one package.",
+      title: "3. Total Wash Package",
+      description: `Experience the ultimate inside-out clean with our full-service detailing package. This includes an exterior wash, an interior deep clean, tyre polish, glass treatment, and an underbody wash—all in one complete care package.
+- Wheel and tyre dressing
+- Engine bay rinse (available upon request)
+- Glass and mirror polish
+- Underbody wash for long-term protection`,
     },
   ];
 
-  // SUBMIT HANDLER (uses Alert instead of browser alert)
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setShowForm(false);
     setAlert({
       show: true,
@@ -66,8 +69,6 @@ export default function SitaraCarWash() {
       title: "Booking Confirmed!",
       message: `Your car wash appointment has been scheduled.\n\n📅 Date: ${formData.date}\n⏰ Time: ${formData.time}\n🏙️ City: ${formData.city}\n🏢 Branch: ${formData.branch}`,
     });
-
-    // Reset form data
     setFormData({ date: "", time: "", city: "", branch: "" });
   };
 
@@ -76,43 +77,43 @@ export default function SitaraCarWash() {
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-20 text-center">
         <h2 className="text-red-600 text-lg sm:text-xl font-semibold tracking-widest mb-2">
-          SITARA CAR WASH & DETAILING
+          Sitara Car Wash & Detailing
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
           Sparkling Clean. Every Time.
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Sitara Car Wash & Detailing offers quick, eco-friendly, and
-          high-quality cleaning services — keeping your car spotless and shining
-          like new, every single day.
+          Sitara Car Wash & Detailing provides quick, eco-friendly, and
+          high-quality vehicle cleaning services, ensuring your car stays
+          spotless and shines like new every day. Whether you need a routine
+          wash or a complete detailing package, you can trust Sitara to deliver
+          consistent results with expert care.
         </p>
       </section>
 
-      {/* SERVICES GRID */}
+      {/* SERVICES SECTION */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 pb-20">
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-lg transition-all p-3 flex flex-col items-center text-center transform hover:-translate-y-1"
+            className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-lg transition-all p-5 flex flex-col items-center text-center transform hover:-translate-y-1"
           >
-            <div className="mb-6">
-              <img
-                src={service.img}
-                alt={service.title}
-                className="h-64 w-full object-cover rounded-2xl shadow-md mx-auto mb-6"
-              />
-            </div>
+            <img
+              src={service.img}
+              alt={service.title}
+              className="h-64 w-full object-cover rounded-2xl shadow-md mb-6"
+            />
             <h3 className="text-2xl font-semibold text-gray-800 mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
               {service.description}
             </p>
           </div>
         ))}
       </section>
 
-      {/* ABOUT SECTION */}
+      {/* ADVANCED CLEANING SECTION */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <img
@@ -125,15 +126,15 @@ export default function SitaraCarWash() {
               Advanced Cleaning Technology, Expert Hands
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              At Sitara Car Wash & Detailing, we combine professional expertise
-              with modern equipment and eco-safe cleaning agents to give your
-              vehicle the care it deserves.
+              At Sitara Car Wash & Detailing, we combine skilled technicians,
+              modern equipment, and eco-safe cleaning agents to provide safe,
+              effective, and professional car care.
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li>✅ Touch-free automatic and manual wash options</li>
               <li>✅ Eco-friendly water recycling systems</li>
-              <li>✅ Premium wax & polish services</li>
-              <li>✅ Comfortable waiting lounge for customers</li>
+              <li>✅ Premium wax and polish services</li>
+              <li>✅ Comfortable customer waiting lounge with refreshments</li>
             </ul>
           </div>
         </div>
@@ -146,8 +147,9 @@ export default function SitaraCarWash() {
             Book Your Wash Today
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Keep your car spotless — visit Sitara Car Wash or schedule your wash
-            online. Enjoy a clean car and peace of mind with Sitara quality.
+            Keep your car spotless—visit Sitara Car Wash or schedule your wash
+            online. Experience peace of mind, professional service, and that
+            perfect showroom shine powered by Sitara quality.
           </p>
           <button
             onClick={() => setShowForm(true)}
@@ -164,7 +166,7 @@ export default function SitaraCarWash() {
           <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative">
             <button
               onClick={() => setShowForm(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl hover:cursor-pointer"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
             >
               &times;
             </button>
@@ -254,7 +256,7 @@ export default function SitaraCarWash() {
 
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white py-3 rounded-full font-semibold hover:bg-red-700 transition-all hover:cursor-pointer"
+                className="w-full bg-red-600 text-white py-3 rounded-full font-semibold hover:bg-red-700 transition-all"
               >
                 Confirm Booking
               </button>
@@ -263,7 +265,6 @@ export default function SitaraCarWash() {
         </div>
       )}
 
-      {/* ALERT (same as fuel card) */}
       <Alert
         type={alert.type}
         title={alert.title}
@@ -272,7 +273,6 @@ export default function SitaraCarWash() {
         onClose={() => setAlert({ ...alert, show: false })}
       />
 
-      {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Sitara Petroleum & Logistics — Car Wash
         Division. All rights reserved.

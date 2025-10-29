@@ -23,10 +23,18 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/About/directors"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Board of Directors
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/About/management"
                   className="hover:text-red-600 transition-colors"
                 >
-                  Leadership & Governance
+                  Our Management Team
                 </Link>
               </li>
               <li>
@@ -51,6 +59,14 @@ const Footer = () => {
                   className="hover:text-red-600 transition-colors"
                 >
                   Sustainability Commitments
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/About/operations"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Our Operations
                 </Link>
               </li>
             </ul>
@@ -86,22 +102,22 @@ const Footer = () => {
                   Industrial Fuel Solutions
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/Fuel/dealer"
                   className="hover:text-red-600 transition-colors"
                 >
                   Commercial Partnerships
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   to="/Fuel/dealer"
                   className="hover:text-red-600 transition-colors"
                 >
                   Become a Dealer
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -171,7 +187,7 @@ const Footer = () => {
                   to="/Services/convenience-stores"
                   className="hover:text-red-600 transition-colors"
                 >
-                  Welcome Mart Stores
+                  Convenience STORES
                 </Link>
               </li>
               <li>
@@ -253,7 +269,7 @@ const Footer = () => {
                   to="/News/customer-helpline"
                   className="hover:text-red-600 transition-colors"
                 >
-                  Latest News
+                  Customer Care
                 </Link>
               </li>
               <li>
@@ -261,7 +277,7 @@ const Footer = () => {
                   to="/News/investor-relations"
                   className="hover:text-red-600 transition-colors"
                 >
-                  Press Releases & Tenders
+                  Investor Relations
                 </Link>
               </li>
               <li>
@@ -269,7 +285,15 @@ const Footer = () => {
                   to="/News/dealer-opportunities"
                   className="hover:text-red-600 transition-colors"
                 >
-                  Promotions & Campaigns
+                  Dealer Opportunities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/News/industrial-solutions"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Industrial Solutions
                 </Link>
               </li>
               <li>
@@ -277,7 +301,7 @@ const Footer = () => {
                   to="/News/feedback"
                   className="hover:text-red-600 transition-colors"
                 >
-                  Customer Care
+                  Feedback & Queries
                 </Link>
               </li>
             </ul>

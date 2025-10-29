@@ -15,8 +15,10 @@ const Title = ({
       ? "text-right items-end"
       : "text-center items-center";
 
-  // check if user passed a tailwind class (starts with "text-") or a hex color (#)
   const isCustomColor = (color) => color && !color.startsWith("text-");
+
+  // Check if subtitle contains HTML tags
+  const containsHTML = (text) => /<\/?[a-z][\s\S]*>/i.test(text);
 
   return (
     <div className={`flex flex-col ${alignmentClass} mb-12 ${className}`}>
@@ -29,16 +31,25 @@ const Title = ({
         {title}
       </h1>
 
-      {subtitle && (
-        <h2
-          className={`text-lg leading-relaxed max-w-3xl ${
-            isCustomColor(subtitleColor) ? "" : subtitleColor
-          }`}
-          style={isCustomColor(subtitleColor) ? { color: subtitleColor } : {}}
-        >
-          {subtitle}
-        </h2>
-      )}
+      {subtitle &&
+        (containsHTML(subtitle) ? (
+          <h2
+            className={`text-lg leading-relaxed max-w-3xl ${
+              isCustomColor(subtitleColor) ? "" : subtitleColor
+            }`}
+            style={isCustomColor(subtitleColor) ? { color: subtitleColor } : {}}
+            dangerouslySetInnerHTML={{ __html: subtitle }}
+          />
+        ) : (
+          <h2
+            className={`text-lg leading-relaxed max-w-3xl ${
+              isCustomColor(subtitleColor) ? "" : subtitleColor
+            }`}
+            style={isCustomColor(subtitleColor) ? { color: subtitleColor } : {}}
+          >
+            {subtitle}
+          </h2>
+        ))}
     </div>
   );
 };

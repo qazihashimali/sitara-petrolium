@@ -42,7 +42,7 @@ const projects = [
   {
     id: 7,
     title: "Cranes",
-    img: "Refinery.jpg",
+    img: "Refinery.png",
     link: "#",
   },
   {

@@ -88,11 +88,20 @@ const RetailNetworkMap = () => {
       <section className="py-16 px-6 md:px-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <Title
-            title="Find Our Fuel Stations"
-            subtitle="Click on any location marker to see station details."
+            title="Our Retail Locations"
+            subtitle="Sitara Petroleum’s expanding retail network ensures that reliable energy is always accessible—whether you're commuting in the city, travelling between provinces, or managing transport fleets on key trade routes. We are dedicated to providing <b>consistent fuel quality, exceptional service standards, and convenient station experiences</b> for every customer, every day."
           />
 
-          <div className="mt-10 w-full h-[70vh] md:h-[80vh] rounded-2xl overflow-hidden shadow-lg">
+          <Title
+            title="Our Retail Locations"
+            subtitle="Explore our growing network of Sitara Petroleum fuel stations across Pakistan. From <b>urban centres to remote highways</b>, our stations are strategically positioned to serve daily drivers, logistics operators, and long-distance travellers."
+          />
+
+          <div
+            className={`mt-10 w-full h-[70vh] md:h-[80vh] rounded-2xl overflow-hidden shadow-lg relative transition-all duration-300 ${
+              selectedStation ? "z-[-1]" : "z-0"
+            }`}
+          >
             <MapContainer
               center={[30.3753, 69.3451]}
               zoom={5}
@@ -145,6 +154,19 @@ const RetailNetworkMap = () => {
               ))}
             </MapContainer>
           </div>
+          <br />
+          <br />
+          <Title
+            title="Highlights of our expanding network include"
+            subtitle={`
+                        <ul class='list-disc text-left mx-auto max-w-3xl space-y-2'>
+                        <li>Coverage in major cities: Lahore, Karachi, Islamabad, Faisalabad, and Multan.</li>
+                        <li>Access along highway corridors: M1, M2, M4, N5, and GT Road.</li>
+                        <li>Support for industrial and rural routes for fleet refuelling.</li>
+                        <li>Use our station locator to find the nearest Sitara Petroleum outlet.</li>
+                        </ul>
+                      `}
+          />
         </div>
       </section>
 
