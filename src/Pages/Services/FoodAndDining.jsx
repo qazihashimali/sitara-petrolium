@@ -37,8 +37,7 @@ const FoodAndDining = () => {
       ),
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1559058777-9451f6e0d4de?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/Quick-Bites.png",
       title: "Quick Bites on the Go",
       description: (
         <p>
@@ -65,9 +64,9 @@ const FoodAndDining = () => {
           Delicious Food, Relaxing Ambience
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Experience the perfect stop for food and relaxation. Our
-          Petroleum’s dining areas offer everything from full meals and snacks
-          to warm tea breaks—all served with{" "}
+          Experience the perfect stop for food and relaxation. Our Petroleum’s
+          dining areas offer everything from full meals and snacks to warm tea
+          breaks—all served with{" "}
           <strong>freshness, hygiene, and comfort</strong>.
         </p>
       </div>
@@ -123,8 +122,8 @@ const FoodAndDining = () => {
         </h4>
         <p className="text-gray-600 mt-2">
           Whether you're <strong>refuelling your vehicle</strong> or{" "}
-          <strong>taking a break on a long journey</strong>, Our Food &
-          Dining space ensures you enjoy{" "}
+          <strong>taking a break on a long journey</strong>, Our Food & Dining
+          space ensures you enjoy{" "}
           <strong>great food, clean surroundings, and a peaceful moment</strong>{" "}
           before hitting the road again.
         </p>

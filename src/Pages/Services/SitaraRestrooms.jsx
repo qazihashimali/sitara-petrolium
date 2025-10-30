@@ -9,7 +9,7 @@ export default function SitaraRestrooms() {
         "Our restrooms are <strong>cleaned and sanitised multiple times a day</strong> using <strong>professional-grade products</strong> and <strong>strict hygiene protocols</strong>. From toilets to touchpoints, every detail is handled with care to ensure a <strong>germ-free, pleasant experience</strong> on every visit.<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li>Frequent sanitisation</li><li>Soap dispensers constantly refilled</li><li>Floor-to-surface disinfection routine</li></ul>",
     },
     {
-      img: "/Comfort-for-Everyone.png",
+      img: "/Comfort-For-Everyone.png",
       title: "Comfort for Everyone",
       description:
         "Our restrooms are <strong>inclusive and family-friendly</strong>, featuring <strong>separate facilities for men, women, and guests with disabilities</strong>. We ensure <strong>accessibility, privacy, and ease of use</strong> for all travellers, whether you're on a long road trip or a short stop.<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li>Wheelchair-accessible entry</li><li>Baby-changing stations (at select locations)</li><li>Clearly marked and secure stalls</li></ul>",
@@ -70,7 +70,7 @@ export default function SitaraRestrooms() {
       <section className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <img
-            src="https://images.unsplash.com/photo-1590490359683-658d1f58f5b0?auto=format&fit=crop&w=900&q=80"
+            src="/Clean-Spaces-For-Better-Journey.png"
             alt="Restroom interior"
             className="rounded-2xl shadow-md"
           />
@@ -92,14 +92,18 @@ export default function SitaraRestrooms() {
               <li>✅ Touch-free fixtures for hygiene</li>
             </ul>
           </div>
-        </div>.
-        <div className="mt-10 text-center px-6 max-w-3xl mx-auto box-border border-2 border-dashed border-gray-300 py-8 rounded-lg bg-gray-50">
-           <h2 className="text-2xl font-bold">Experience Clean & Fresh Comfort</h2>
-        <p>
-          Visit our Petroleum stations across Pakistan and enjoy modern, hygienic, and family-friendly restrooms—because your comfort matters, no matter the journey.
-        </p>
         </div>
-       
+        .
+        <div className="mt-10 text-center px-6 max-w-3xl mx-auto box-border border-2 border-dashed border-gray-300 py-8 rounded-lg bg-gray-50">
+          <h2 className="text-2xl font-bold">
+            Experience Clean & Fresh Comfort
+          </h2>
+          <p>
+            Visit our Petroleum stations across Pakistan and enjoy modern,
+            hygienic, and family-friendly restrooms—because your comfort
+            matters, no matter the journey.
+          </p>
+        </div>
       </section>
 
       {/* FOOTER */}

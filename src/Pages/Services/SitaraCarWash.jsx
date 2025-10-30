@@ -24,34 +24,30 @@ export default function SitaraCarWash() {
       "Model Town Service Center",
       "Johar Town Wash Bay",
     ],
-    Islamabad: [
-      "F-10 Wash Point",
-      "Blue Area Wash",
-      "I-9 Service Center",
-    ],
+    Islamabad: ["F-10 Wash Point", "Blue Area Wash", "I-9 Service Center"],
     Multan: ["Cantt Car Wash", "Shah Rukn-e-Alam Wash", "Sadar Auto Spa"],
   };
 
   const services = [
     {
-      img: "/EV-charger.jpg",
-      title: "1. Exterior Wash",
+      img: "/Exterior-Car-Wash.png",
+      title: "Exterior Wash",
       description: `Our gentle, pressure-controlled washing uses premium detergents that protect your vehicle’s paint while enhancing its shine. The exterior wash process effectively removes dirt, dust, and road grime, leaving your car gleaming and scratch-free.
 - Touch-safe wash techniques
 - Foam and jet wash options
 - Paint-protecting shampoo formulas`,
     },
     {
-      img: "/carwash-interior.jpg",
-      title: "2. Interior Cleaning",
+      img: "/Interior-Car-Wash.png",
+      title: "Interior Cleaning",
       description: `Breathe easily and drive comfortably with our interior cleaning service. It includes deep vacuuming, dashboard cleaning, seat brushing, and odour elimination, restoring a clean and refreshed cabin environment.
 - Vacuuming of carpets and seats
 - Dashboard and console wipe-down
 - Fragrance spray or deodoriser`,
     },
     {
-      img: "/carwash-total.jpg",
-      title: "3. Total Wash Package",
+      img: "/Total-Car-Wash.png",
+      title: "Total Wash Package",
       description: `Experience the ultimate inside-out clean with our full-service detailing package. This includes an exterior wash, an interior deep clean, tyre polish, glass treatment, and an underbody wash—all in one complete care package.
 - Wheel and tyre dressing
 - Engine bay rinse (available upon request)
@@ -84,10 +80,10 @@ export default function SitaraCarWash() {
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
           Our Car Wash & Detailing provides quick,<b> eco-friendly</b>, and
-          <b> high-quality</b> vehicle cleaning services, ensuring your car stays
-          spotless and shines like new every day. Whether you need a routine
-          wash or a complete detailing package, you can trust our team to deliver
-          consistent results with expert care.
+          <b> high-quality</b> vehicle cleaning services, ensuring your car
+          stays spotless and shines like new every day. Whether you need a
+          routine wash or a complete detailing package, you can trust our team
+          to deliver consistent results with expert care.
         </p>
       </section>
 
@@ -117,7 +113,7 @@ export default function SitaraCarWash() {
       <section className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <img
-            src="https://images.unsplash.com/photo-1607863680057-6e0a5d3eb56f?auto=format&fit=crop&w=900&q=80"
+            src="/Advanced-Car-Washing.png"
             alt="Car Wash"
             className="rounded-2xl shadow-md"
           />
@@ -127,8 +123,8 @@ export default function SitaraCarWash() {
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               At Our Car Wash & Detailing, we combine skilled technicians,
-              modern equipment, and <b>eco-safe cleaning agents</b> to provide safe,
-              effective, and professional car care.
+              modern equipment, and <b>eco-safe cleaning agents</b> to provide
+              safe, effective, and professional car care.
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li>✅ Touch-free automatic and manual wash options</li>
@@ -147,9 +143,9 @@ export default function SitaraCarWash() {
             Book Your Wash Today
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Keep your car spotless—visit <b>our Car Wash</b> or schedule your wash
-            online. Experience peace of mind, professional service, and that
-            perfect showroom shine powered by <b>Sitara quality</b>.
+            Keep your car spotless—visit <b>our Car Wash</b> or schedule your
+            wash online. Experience peace of mind, professional service, and
+            that perfect showroom shine powered by <b>Sitara quality</b>.
           </p>
           <button
             onClick={() => setShowForm(true)}
