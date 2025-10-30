@@ -35,7 +35,7 @@ const AutomotiveEngineOils = () => {
           </h2>
 
           <p className="text-gray-700 text-lg leading-relaxed">
-            <strong className="text-amber-700">Sitara Petroleum</strong> offers
+            <strong className="text-amber-700">We</strong> offers
             advanced <strong>engine oils</strong> formulated explicitly for
             modern engines. Our products maximise protection, reduce friction,
             and ensure consistent performance in all conditions. Whether for
@@ -58,7 +58,7 @@ const AutomotiveEngineOils = () => {
               <p className="text-sm text-gray-600 leading-relaxed">
                 Our lubricants are designed to meet the stringent requirements
                 of modern engine technology. With advanced viscosity control and
-                thermal stability, Sitara engine oils help maintain{" "}
+                thermal stability, Our engine oils help maintain{" "}
                 <b>maximum power output, endurance, and fuel efficiency</b>—even
                 under extreme conditions.
               </p>
@@ -92,7 +92,7 @@ const AutomotiveEngineOils = () => {
               <p className="text-sm text-gray-600 leading-relaxed">
                 Every drop of our engine oil is engineered to minimise friction
                 where it matters most. Using high-quality base oils and
-                precision-formulated additives, Sitara engine oils provide
+                precision-formulated additives, Our engine oils provide
                 <b>
                   smooth flow, rapid start-up circulation, and dependable
                   lubrication under high pressure and temperature.

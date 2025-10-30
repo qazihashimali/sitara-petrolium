@@ -18,7 +18,7 @@ export default function SitaraCarWash() {
   });
 
   const cityBranches = {
-    Karachi: ["Sitara Clifton Wash", "DHA Express Wash", "Korangi Auto Spa"],
+    Karachi: ["Clifton Wash", "DHA Express Wash", "Korangi Auto Spa"],
     Lahore: [
       "Gulberg Car Wash",
       "Model Town Service Center",
@@ -26,7 +26,7 @@ export default function SitaraCarWash() {
     ],
     Islamabad: [
       "F-10 Wash Point",
-      "Blue Area Sitara Wash",
+      "Blue Area Wash",
       "I-9 Service Center",
     ],
     Multan: ["Cantt Car Wash", "Shah Rukn-e-Alam Wash", "Sadar Auto Spa"],
@@ -77,16 +77,16 @@ export default function SitaraCarWash() {
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-20 text-center">
         <h2 className="text-red-600 text-lg sm:text-xl font-semibold tracking-widest mb-2">
-          Sitara Car Wash & Detailing
+          Our Car Wash & Detailing
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
           Sparkling Clean. Every Time.
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Sitara Car Wash & Detailing provides quick, eco-friendly, and
-          high-quality vehicle cleaning services, ensuring your car stays
+          Our Car Wash & Detailing provides quick,<b> eco-friendly</b>, and
+          <b> high-quality</b> vehicle cleaning services, ensuring your car stays
           spotless and shines like new every day. Whether you need a routine
-          wash or a complete detailing package, you can trust Sitara to deliver
+          wash or a complete detailing package, you can trust our team to deliver
           consistent results with expert care.
         </p>
       </section>
@@ -126,8 +126,8 @@ export default function SitaraCarWash() {
               Advanced Cleaning Technology, Expert Hands
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              At Sitara Car Wash & Detailing, we combine skilled technicians,
-              modern equipment, and eco-safe cleaning agents to provide safe,
+              At Our Car Wash & Detailing, we combine skilled technicians,
+              modern equipment, and <b>eco-safe cleaning agents</b> to provide safe,
               effective, and professional car care.
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
@@ -147,9 +147,9 @@ export default function SitaraCarWash() {
             Book Your Wash Today
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Keep your car spotless—visit Sitara Car Wash or schedule your wash
+            Keep your car spotless—visit <b>our Car Wash</b> or schedule your wash
             online. Experience peace of mind, professional service, and that
-            perfect showroom shine powered by Sitara quality.
+            perfect showroom shine powered by <b>Sitara quality</b>.
           </p>
           <button
             onClick={() => setShowForm(true)}
@@ -274,7 +274,7 @@ export default function SitaraCarWash() {
       />
 
       <footer className="border-t py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Sitara Petroleum & Logistics — Car Wash
+        © {new Date().getFullYear()} Our Petroleum & Logistics — Car Wash
         Division. All rights reserved.
       </footer>
     </div>

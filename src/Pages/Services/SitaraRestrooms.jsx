@@ -12,7 +12,7 @@ export default function SitaraRestrooms() {
       img: "/Comfort-for-Everyone.png",
       title: "Comfort for Everyone",
       description:
-        "Sitara restrooms are <strong>inclusive and family-friendly</strong>, featuring <strong>separate facilities for men, women, and guests with disabilities</strong>. We ensure <strong>accessibility, privacy, and ease of use</strong> for all travellers, whether you're on a long road trip or a short stop.<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li>Wheelchair-accessible entry</li><li>Baby-changing stations (at select locations)</li><li>Clearly marked and secure stalls</li></ul>",
+        "Our restrooms are <strong>inclusive and family-friendly</strong>, featuring <strong>separate facilities for men, women, and guests with disabilities</strong>. We ensure <strong>accessibility, privacy, and ease of use</strong> for all travellers, whether you're on a long road trip or a short stop.<br/><ul class='text-sm mt-2 list-disc list-inside text-gray-600'><li>Wheelchair-accessible entry</li><li>Baby-changing stations (at select locations)</li><li>Clearly marked and secure stalls</li></ul>",
     },
     {
       img: "/Modern-Amenities.png",
@@ -36,7 +36,7 @@ export default function SitaraRestrooms() {
           className="text-gray-600 max-w-2xl mx-auto leading-relaxed"
           dangerouslySetInnerHTML={{
             __html:
-              "<strong>Sitara Restrooms</strong> aim to provide <strong>travellers, families, and commuters</strong> with a spotless, refreshing, and safe experience — maintained around the clock for your comfort and peace of mind.",
+              "<strong>Our Restrooms</strong> aim to provide <strong>travellers, families, and commuters</strong> with a spotless, refreshing, and safe experience — maintained around the clock for your comfort and peace of mind.",
           }}
         />
       </section>
@@ -82,7 +82,7 @@ export default function SitaraRestrooms() {
               className="text-gray-600 mb-4 leading-relaxed"
               dangerouslySetInnerHTML={{
                 __html:
-                  "Sitara Petroleum believes every stop should feel like a <strong>refresh</strong> — not just a pause. Our restrooms are cleaned with <strong>industry-grade products</strong>, staffed by <strong>dedicated professionals</strong>, and monitored in real-time to keep you <strong>safe and satisfied</strong>.",
+                  "We believes every stop should feel like a <strong>refresh</strong> — not just a pause. Our restrooms are cleaned with <strong>industry-grade products</strong>, staffed by <strong>dedicated professionals</strong>, and monitored in real-time to keep you <strong>safe and satisfied</strong>.",
               }}
             />
             <ul className="space-y-2 text-sm text-gray-700">
@@ -92,15 +92,22 @@ export default function SitaraRestrooms() {
               <li>✅ Touch-free fixtures for hygiene</li>
             </ul>
           </div>
+        </div>.
+        <div className="mt-10 text-center px-6 max-w-3xl mx-auto box-border border-2 border-dashed border-gray-300 py-8 rounded-lg bg-gray-50">
+           <h2 className="text-2xl font-bold">Experience Clean & Fresh Comfort</h2>
+        <p>
+          Visit our Petroleum stations across Pakistan and enjoy modern, hygienic, and family-friendly restrooms—because your comfort matters, no matter the journey.
+        </p>
         </div>
+       
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Sitara Petroleum —{" "}
+      {/* <footer className="border-t py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Our Petroleum —{" "}
         <span className="font-semibold">Clean & Fresh Restrooms</span>. All
         rights reserved.
-      </footer>
+      </footer> */}
     </div>
   );
 }

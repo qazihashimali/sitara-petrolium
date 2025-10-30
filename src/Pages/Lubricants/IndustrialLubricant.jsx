@@ -16,12 +16,12 @@ const IndustrialLubricants = () => {
           </h2>
 
           <p className="text-gray-700 text-lg leading-relaxed text-justify">
-            <strong className="text-amber-700">Sitara Petroleum’s</strong>{" "}
+            <strong className="text-amber-700">Our</strong>{" "}
             <strong>industrial lubricants</strong> are designed to offer maximum
             protection and performance for heavy-duty machinery, effectively
             reducing friction, wear, and downtime across various industries.
-            From manufacturing plants to construction sites, Sitara Petroleum
-            provides high-performance lubricants that ensure smooth industrial
+            From manufacturing plants to construction sites, we provide
+            high-performance lubricants that ensure smooth industrial
             operations, even in the most demanding conditions.
           </p>
 
@@ -57,7 +57,7 @@ const IndustrialLubricants = () => {
                 Smooth Operation
               </h4>
               <p className="text-sm text-gray-600 leading-relaxed text-justify">
-                Engineered for precision and efficiency, Sitara lubricants help
+                Engineered for precision and efficiency, our lubricants help
                 reduce internal resistance in mechanical systems. This results
                 in{" "}
                 <b>
@@ -93,7 +93,7 @@ const IndustrialLubricants = () => {
           <div className="pt-6">
             <Title
               title="Built for Industry. Backed by Science."
-              subtitle={`Sitara Petroleum’s industrial lubricants use advanced additive technology for:<br />
+              subtitle={`Our industrial lubricants use advanced additive technology for:<br />
               • Power plants and utilities<br />
               • Manufacturing and processing industries<br />
               • Mining and construction operations<br />

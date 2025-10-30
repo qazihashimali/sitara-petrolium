@@ -3,7 +3,7 @@ import React from "react";
 export default function SitaraConvenienceStore() {
   const features = [
     {
-      img: "/EV-charger.jpg",
+      img: "/Snacks-Beverages.png",
       title: "Snacks & Beverages",
       description: `Fuel your journey with a wide variety of refreshments and snacks, perfect for any time of day. Grab a coffee, chilled juice, a soft drink, or your favourite pack of chips — freshly stocked and ready when you are.
 ✔ Chilled drinks & bottled water
@@ -11,7 +11,7 @@ export default function SitaraConvenienceStore() {
 ✔ Chips, biscuits, chocolates, and more`,
     },
     {
-      img: "/store-essentials.jpg",
+      img: "/Daily-Essentials.png",
       title: "Daily Essentials",
       description: `Need something for home or hygiene? We’ve got you covered. Our stores offer groceries, toiletries, and basic home care items, so you never have to make an extra stop.
 ✔ Toothpaste, soap, tissue, detergents
@@ -19,7 +19,7 @@ export default function SitaraConvenienceStore() {
 ✔ Baby care & feminine hygiene products`,
     },
     {
-      img: "/store-travel.jpg",
+      img: "/Travel-Accessories.png",
       title: "Travel Accessories",
       description: `Hit the road prepared. From phone chargers to energy bars, we stock travel-friendly products that keep you going with ease.
 ✔ Power banks, chargers, mobile accessories
@@ -33,15 +33,16 @@ export default function SitaraConvenienceStore() {
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-20 text-center">
         <h2 className="text-red-600 text-lg sm:text-xl font-semibold tracking-widest mb-2">
-          SITARA CONVENIENCE STORE
+          Our CONVENIENCE STORE
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
           Your Everyday Essentials, Anytime, Anywhere
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          From snacks and drinks to travel essentials, Sitara Convenience Store
-          provides comfort and choice for your journey. Stop by for quick,
-          quality essentials, open 24/7.
+          From snacks and drinks to travel essentials, our{" "}
+          <b>Convenience Store</b>
+          provides <b>comfort and choice</b> for your journey. Stop by for
+          quick, quality essentials, open 24/7.
         </p>
       </section>
 
@@ -82,15 +83,23 @@ export default function SitaraConvenienceStore() {
               Comfort Meets Convenience
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Sitara Convenience Stores are designed to serve both on-the-go
-              travellers and local walk-in customers. We offer a clean,
+              Our Convenience Stores are designed to serve both <b>on-the-go</b>
+              travellers and <b>local walk-in customers</b>. We offer a clean,
               accessible environment, friendly staff, and fast service.
             </p>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• 24/7 availability at select Sitara Petroleum stations</li>
-              <li>• Fresh snacks and chilled beverages</li>
-              <li>• Polite, helpful staff & clean interior</li>
-              <li>• Fast checkout with digital payment options</li>
+              <li>
+                • <b>24/7 availability</b> at select stations
+              </li>
+              <li>
+                • <b>Fresh snacks and chilled beverages</b>
+              </li>
+              <li>
+                • <b>Polite, helpful staff</b> & <b>clean interior</b>
+              </li>
+              <li>
+                • <b>Fast checkout</b> with digital payment options
+              </li>
             </ul>
           </div>
         </div>
@@ -100,19 +109,19 @@ export default function SitaraConvenienceStore() {
       <section className="text-center py-20 px-6 max-w-6xl mx-auto">
         <div className="bg-white border border-gray-200 rounded-3xl shadow-md py-12 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Visit Sitara Convenience Store Today
+            Visit Our Convenience Store Today
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Whether you’re fueling up, taking a break, or picking up a quick
-            item on the way home, Sitara Convenience Store makes it easy to grab
-            what you need. Quick. Clean. Convenient.
+            item on the way home, our Convenience Store makes it easy to grab
+            what you need. <b>Quick. Clean. Convenient.</b>
           </p>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Sitara Petroleum & Logistics — Convenience
+        © {new Date().getFullYear()} Our Petroleum & Logistics — Convenience
         Division. All rights reserved.
       </footer>
     </div>

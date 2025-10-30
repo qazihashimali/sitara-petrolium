@@ -65,7 +65,7 @@ const FoodAndDining = () => {
           Delicious Food, Relaxing Ambience
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Experience the perfect stop for food and relaxation. Sitara
+          Experience the perfect stop for food and relaxation. Our
           Petroleum’s dining areas offer everything from full meals and snacks
           to warm tea breaks—all served with{" "}
           <strong>freshness, hygiene, and comfort</strong>.
@@ -105,7 +105,7 @@ const FoodAndDining = () => {
           Comfort Meets Flavour
         </h3>
         <p className="text-gray-600 mb-4 leading-relaxed">
-          Sitara dining zones are designed{" "}
+          Our dining zones are designed{" "}
           <strong>for relaxed stops and family breaks</strong>, featuring{" "}
           <strong>
             clean seating, fast service, and freshly made food you can trust
@@ -123,7 +123,7 @@ const FoodAndDining = () => {
         </h4>
         <p className="text-gray-600 mt-2">
           Whether you're <strong>refuelling your vehicle</strong> or{" "}
-          <strong>taking a break on a long journey</strong>, Sitara's Food &
+          <strong>taking a break on a long journey</strong>, Our Food &
           Dining space ensures you enjoy{" "}
           <strong>great food, clean surroundings, and a peaceful moment</strong>{" "}
           before hitting the road again.

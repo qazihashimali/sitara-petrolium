@@ -7,7 +7,7 @@ import {
   AlertTriangle,
   Handshake,
 } from "lucide-react";
-import Title from "../../Components/Title";
+import { images } from "../../assets/assets";
 
 const HealthSafety = () => {
   const principles = [
@@ -45,33 +45,28 @@ const HealthSafety = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <section
-        className="relative h-[70vh] flex items-center justify-center text-center text-white"
+        className="relative h-[50vh] md:h-[80vh] flex items-center justify-center text-center text-white"
         style={{
-          backgroundImage: "url('/Health-safety-banner.png')", // ⬅️ Replace with your actual image path
+          backgroundImage: `url(${images.HealthSafety})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Foreground Content */}
-        <div className="relative z-10 px-6 md:px-12 max-w-4xl mx-auto">
-          <h2 className="text-red-500 text-xl sm:text-2xl font-semibold mb-3 tracking-wide uppercase">
-            Health, Safety & Environment
-          </h2>
-
-          <Title
-            title="Commitment to Safety & Sustainability"
-            subtitle="We believe every incident is preventable. Continuous training and strict safety standards protect our employees, contractors, and communities."
-            align="center"
-            textColor="text-white"
-            subtitleColor="text-gray-200"
-          />
+        <div className="absolute inset-0 backdrop-brightness-50"></div>
+        <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            Commitment to Safety & Sustainability
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
+            We believe every incident is preventable. Continuous training and
+            strict safety standards protect our employees, contractors, and
+            communities.
+          </p>
         </div>
       </section>
+      {/* Hero Section */}
 
       {/* Core Principles Grid */}
       <section className="py-6 px-6 md:px-12 lg:px-20">

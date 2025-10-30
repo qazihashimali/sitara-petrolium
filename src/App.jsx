@@ -33,6 +33,8 @@ import DealerOpportunities from "./Pages/News&Promotions/DealerOpportunities";
 import InvestorRelations from "./Pages/News&Promotions/InvestorRelations";
 import FeedbackQueries from "./Pages/News&Promotions/FeedbackQueries";
 import IndustrialSolutions from "./Pages/News&Promotions/IndustrialSolutions";
+import CorporateSocialResponsibility from "./Pages/AboutUs/CoporateSocilaRes";
+import NewFindings from "./Pages/Carrers/NewFindings";
 
 const App = () => {
   return (
@@ -45,6 +47,10 @@ const App = () => {
         <Route path="/about/operations" element={<OurOperations />} />
         <Route path="/about/directors" element={<BoardOfDirector />} />
         <Route path="/about/management" element={<OurManagement />} />
+        <Route
+          path="/About/corporate-social-responsibility"
+          element={<CorporateSocialResponsibility />}
+        />
         <Route
           path="/about/corporate-info"
           element={<CorporateInformation />}
@@ -115,6 +121,8 @@ const App = () => {
           path="/news/industrial-solutions"
           element={<IndustrialSolutions />}
         />
+        // Careers Routes
+        <Route path="/careers/new-findings" element={<NewFindings />} />
       </Routes>
       <Footer />
     </>

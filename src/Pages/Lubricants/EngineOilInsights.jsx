@@ -20,11 +20,11 @@ const EngineOilInsights = () => {
             </h2>
 
             <p className="text-gray-700 text-lg leading-relaxed text-justify">
-              <strong className="text-red-700">Sitara Petroleum’s</strong>{" "}
+              <strong className="text-red-700">Our</strong>{" "}
               <strong>automotive engine oils</strong> are formulated with
               next-generation additives to ensure high thermal stability, smooth
               engine performance, and protection against sludge formation.
-              Designed for modern engines, Sitara Petroleum’s lubricants blend
+              Designed for modern engines, our lubricants blend
               chemistry and engineering to deliver performance you can rely on,
               from daily drives to high-demand operating conditions.
             </p>
@@ -65,7 +65,7 @@ const EngineOilInsights = () => {
             <p className="text-sm text-gray-600 leading-relaxed text-justify">
               Our engine oils are crafted to provide{" "}
               <b>low-friction performance</b>, helping your engine run smoother
-              and cooler. By minimising internal friction, Sitara oils optimise{" "}
+              and cooler. By minimising internal friction, our oils optimise{" "}
               <b>fuel efficiency</b> and reduce overall wear.
             </p>
           </div>
@@ -79,7 +79,7 @@ const EngineOilInsights = () => {
               High Thermal Stability
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed text-justify">
-              Extreme heat shouldn’t lead to excessive wear. Sitara engine oils
+              Extreme heat shouldn’t lead to excessive wear. Our engine oils
               are engineered for <b>temperature resilience</b>, maintaining oil
               viscosity even during high-speed driving or intense stop-and-go
               conditions.
@@ -103,11 +103,11 @@ const EngineOilInsights = () => {
         </div>
 
         {/* -------------------------------------------------
-            3. WHAT SETS SITARA OILS APART?
+            3. WHAT SETS OUR OILS APART?
         ------------------------------------------------- */}
         <div className="pt-6">
           <Title
-            title="What Sets Sitara Oils Apart?"
+            title="What Sets Our Oils Apart?"
             subtitle={`• Advanced additive packages for cleaner performance<br />
                      • Tested for both petrol and diesel engines<br />
                      • Compliant with OEM and international standards<br />

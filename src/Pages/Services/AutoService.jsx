@@ -15,21 +15,39 @@ export default function SitaraAutoService() {
   const services = [
     {
       img: "/Oil-Filter.jpg",
-      title: "Oil & Filter Change",
-      description:
-        "Keep your engine performing at its best with our premium-grade engine oil and expert filter replacement. Our technicians ensure a fast, clean, and precise service so that you can get back on the road with confidence.",
+      title: "Comprehensive Maintenance & Repair",
+      description: `
+        From routine oil changes to advanced diagnostics, our trained technicians provide <b>end-to-end auto care</b> tailored to your vehicle’s needs. We utilise genuine parts, the latest tools, and adhere to manufacturer-recommended service protocols.
+        <br /><br />
+        <b>Services Include:</b><br />
+        - Engine Oil & Filter Replacement<br />
+        - Brake Service & Suspension Repairs<br />
+        - Battery, Radiator & A/C Checkups<br />
+        - Tire Rotation & Alignment<br />
+        - Computerised Vehicle Diagnostics
+      `,
     },
     {
-      img: "/tire-service.jpg",
-      title: "Tire Replacement & Balancing",
-      description:
-        "Drive smoother and safer with our tyre services, including premium tyre replacements, wheel balancing, and alignment. We make sure your tyres wear evenly and your ride remains vibration-free.\n✔ Branded tyre options\n✔ Computerised balancing\n✔ Alignment & rotation support",
+      img: "/Servicing.png",
+      title: "Trusted Quality. Every Visit.",
+      description: `
+        We stand by our service quality. Whether it’s your first visit or a regular maintenance stop, you can expect:<br /><br />
+        - Certified technicians trained in multi-brand vehicle servicing<br />
+        - Clear service timelines and job explanations<br />
+        - Honest pricing with no hidden charges<br />
+        - Manufacturer-grade oils and lubricants (including our engine oils)
+      `,
     },
     {
-      img: "/brake-inspection.jpg",
-      title: "Brake & Safety Inspection",
-      description:
-        "Your safety is our priority. We conduct thorough brake system diagnostics, checking pad wear, rotor condition, fluid levels, and making any necessary replacements. This ensures you have complete control and peace of mind.\n✔ Brake pad & disc service\n✔ Safety diagnostics\n✔ Road-readiness assurance",
+      img: "/Tyre.png",
+      title: "Fast, Transparent, and Customer-Centric",
+      description: `
+        We understand that time matters. Our Auto Service is designed to provide:<br /><br />
+        - <b>Quick service turnaround</b> without compromising quality<br />
+        - <b>Real-time service updates</b> via SMS or WhatsApp<br />
+        - <b>Comfortable waiting areas</b> with refreshments<br />
+        - Flexible service booking (walk-in or online)
+      `,
     },
   ];
 
@@ -51,18 +69,17 @@ export default function SitaraAutoService() {
   return (
     <section className="bg-gray-50 py-20 px-4 sm:px-10 relative">
       {/* HEADER */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-16">
         <h2 className="text-red-600 text-lg sm:text-xl font-semibold tracking-widest mb-2">
-          SITARA AUTO SERVICE
+          AUTO SERVICE
         </h2>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
           Reliable Car Care, Trusted by Drivers
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          At Sitara Auto Service, we provide professional maintenance, quick
-          repairs, and genuine care to keep your vehicle running smoothly. Our
-          expert technicians, transparent pricing, and commitment to quality are
-          all backed by Sitara Petroleum’s high standards.
+          Experience professional maintenance, quick repairs, and genuine care.
+          Our Auto Service keeps your vehicle running smoothly with expert
+          technicians, transparent pricing, and trusted quality.
         </p>
       </div>
 
@@ -75,59 +92,50 @@ export default function SitaraAutoService() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-lg transition-all p-4 flex flex-col items-center text-center transform hover:-translate-y-1"
+            className="bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-xl transition-all p-6 flex flex-col items-center text-center transform hover:-translate-y-1"
           >
             <div className="w-full h-56 overflow-hidden rounded-2xl mb-6">
               <img
                 src={service.img}
                 alt={service.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">
-              {service.description}
-            </p>
+            <p
+              className="text-gray-600 text-base leading-relaxed text-left whitespace-pre-line"
+              dangerouslySetInnerHTML={{ __html: service.description }}
+            />
           </motion.div>
         ))}
       </div>
 
       {/* INFO SECTION */}
-      <div className="text-center mt-20 bg-white border border-gray-200 rounded-3xl shadow-md py-14 px-10 max-w-5xl mx-auto">
-        <h3 className="text-3xl font-semibold text-gray-800 mb-4">
-          Expert Technicians, Quality Service
+      <div className="text-center mt-20 bg-white border border-gray-200 rounded-3xl shadow-sm py-14 px-10 max-w-5xl mx-auto">
+        <h3 className="text-3xl font-semibold text-gray-800 mb-6">
+          Why Choose Auto Service?
         </h3>
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed text-base">
-          Sitara Auto Service centres are equipped with:
-        </p>
-        <ul className="text-gray-700 text-base space-y-2 max-w-md mx-auto text-left mb-10">
-          <li>• State-of-the-art diagnostic tools</li>
-          <li>• Genuine parts for every repair</li>
-          <li>• Certified professionals trained across vehicle brands</li>
-        </ul>
         <p className="text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed text-base">
-          We combine speed, transparency, and technical precision to deliver
-          reliable car care every single time.
+          • 100% Genuine Parts <br />
+          • Backed by Our Petroleum’s Quality Standards <br />
+          • Vehicle History & Digital Records <br />• Loyalty & Referral
+          Programs for Regular Customers
         </p>
 
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-          Why Choose Sitara Auto Service?
+          Visit Us Today
         </h3>
-        <ul className="text-gray-700 text-base space-y-2 max-w-md mx-auto text-left mb-10">
-          <li>• Genuine parts and transparent pricing</li>
-          <li>• Express service for minimal downtime</li>
-          <li>• Comfortable customer waiting areas</li>
-          <li>
-            • 24/7 roadside assistance available at select Sitara Petroleum
-            stations
-          </li>
-        </ul>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          Our service centres are conveniently located alongside Petroleum fuel
+          stations in major cities. Drive in for trusted car care that keeps you
+          going, mile after mile.
+        </p>
 
         <button
           onClick={() => setShowForm(true)}
-          className="bg-red-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-red-700 transition-all hover:cursor-pointer"
+          className="bg-red-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-red-700 transition-all hover:cursor-pointer shadow-md hover:shadow-lg"
         >
           Schedule Service
         </button>
@@ -135,16 +143,16 @@ export default function SitaraAutoService() {
 
       {/* FORM MODAL */}
       {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-3xl shadow-lg w-full max-w-lg p-8 relative"
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-8 relative"
           >
             <button
               onClick={() => setShowForm(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl hover:cursor-pointer"
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl hover:cursor-pointer"
             >
               ✕
             </button>
@@ -222,7 +230,7 @@ export default function SitaraAutoService() {
               <button
                 type="submit"
                 disabled={!formData.city || !formData.date || !formData.time}
-                className="w-full bg-red-600 text-white py-3 rounded-full font-semibold hover:bg-red-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer"
+                className="w-full bg-red-600 text-white py-3 rounded-full font-semibold hover:bg-red-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer shadow-md"
               >
                 Confirm Booking
               </button>

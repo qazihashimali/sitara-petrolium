@@ -2,24 +2,30 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Building2, Truck, MapPin, ShieldCheck, Network } from "lucide-react";
 import Title from "../../Components/Title";
+import { images } from "../../assets/assets";
 
 const OurOperations = () => {
   return (
     <div className="text-gray-800">
       {/* Hero Section with Background Image */}
       <section
-        className="relative bg-cover bg-center bg-no-repeat text-white py-28 px-6 text-center"
+        className="relative h-[50vh] md:h-[90vh] flex items-center justify-center text-center text-white"
         style={{
-          backgroundImage: "url('/assets/9.jpg')", // 🖼️ Replace with your hero image path
+          backgroundImage: `url(${images.OurOperations})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10">
-          <Title
-            title="Our Operations"
-            subtitle="Areas of Business & Current Operations"
-            textColor="text-white"
-          />
+        <div className="absolute inset-0 backdrop-brightness-50"></div>
+        <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            Our Operations
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
+            Empowering Pakistan’s energy future through reliability, efficiency,
+            safety and service excellence.
+          </p>
         </div>
       </section>
 
@@ -28,7 +34,7 @@ const OurOperations = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
             <img
-              src="/images/fuel-station.jpg"
+              src="/Fuel-Station-Management.png"
               alt="Fuel Station"
               className="rounded-2xl shadow-lg w-full object-cover"
             />
@@ -77,7 +83,7 @@ const OurOperations = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src="/images/fuel-logistics.jpg"
+              src="/Fuel-Transportation-Logistics.png"
               alt="Fuel Logistics"
               className="rounded-2xl shadow-lg w-full object-cover"
             />
@@ -96,27 +102,27 @@ const OurOperations = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             <CapabilityCard
-              icon={<MapPin className="w-8 h-8 text-blue-600" />}
+              icon={<MapPin className="w-8 h-8 text-green-600" />}
               title="Nationwide Coverage"
               text="A vast logistics network enabling fuel supply to every region across Pakistan."
             />
             <CapabilityCard
-              icon={<Truck className="w-8 h-8 text-blue-600" />}
+              icon={<Truck className="w-8 h-8 text-green-600" />}
               title="Fleet Strength"
               text="Over 400 company-owned fuel tankers, maintained and monitored under strict safety protocols."
             />
             <CapabilityCard
-              icon={<ShieldCheck className="w-8 h-8 text-blue-600" />}
+              icon={<ShieldCheck className="w-8 h-8 text-green-600" />}
               title="Safety & Compliance"
               text="Operations follow national and international safety standards with advanced tracking systems."
             />
             <CapabilityCard
-              icon={<Network className="w-8 h-8 text-blue-600" />}
+              icon={<Network className="w-8 h-8 text-green-600" />}
               title="Reliable Supply Chain"
               text="Trusted logistics partner for the GO Retail network, ensuring uninterrupted deliveries."
             />
             <CapabilityCard
-              icon={<Building2 className="w-8 h-8 text-blue-600" />}
+              icon={<Building2 className="w-8 h-8 text-green-600" />}
               title="Operational Excellence"
               text="Optimized for time efficiency, route safety, and cost control — ensuring excellence in every delivery."
             />

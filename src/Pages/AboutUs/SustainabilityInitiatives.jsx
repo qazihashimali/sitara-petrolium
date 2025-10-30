@@ -8,6 +8,7 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import Title from "../../Components/Title";
+import { images } from "../../assets/assets";
 
 const SustainabilityInitiatives = () => {
   const initiatives = [
@@ -24,7 +25,7 @@ const SustainabilityInitiatives = () => {
     {
       icon: <Sun size={36} className="text-yellow-500" />,
       title: "Renewable Integration",
-      desc: "Sitara Petroleum is dedicated to incorporating renewable energy technologies into its infrastructure. Our long-term strategy includes developing solar-powered fuel stations, installing sustainable lighting systems, and adopting energy-efficient operations to lessen dependence on the grid.",
+      desc: "We are dedicated to incorporating renewable energy technologies into its infrastructure. Our long-term strategy includes developing solar-powered fuel stations, installing sustainable lighting systems, and adopting energy-efficient operations to lessen dependence on the grid.",
     },
     {
       icon: <Recycle size={36} className="text-green-500" />,
@@ -47,29 +48,28 @@ const SustainabilityInitiatives = () => {
     <div className="min-h-screen bg-white">
       {/*Hero Section */}
       <section
-        className="relative h-[70vh] flex items-center justify-center text-center text-white"
+        className="relative h-[50vh] md:h-[80vh] flex items-center justify-center text-center text-white"
         style={{
-          backgroundImage: "url('/Sustainability-Banner.png')", // ⬅️ Replace with your actual image path
+          backgroundImage: `url(${images.SustainabilityInitiatives})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Foreground content */}
-        <div className="relative z-10 px-6 md:px-12 max-w-4xl mx-auto">
-          <h2 className="text-red-500 text-xl sm:text-2xl font-semibold mb-3 tracking-wide uppercase">
+        <div className="absolute inset-0 backdrop-brightness-50"></div>
+        <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            {" "}
             Sustainability Initiatives
-          </h2>
-
-          <Title
-            title="Building a Greener Future Together"
-            subtitle="At Sitara Petroleum, sustainability is not an afterthought; it is integral to how we fuel Pakistan every day. We are dedicated to providing reliable energy while minimizing our environmental impact. From developing EV infrastructure to ensuring ecological responsibility throughout our supply chain, we are committed to preparing for a cleaner tomorrow."
-            align="center"
-            textColor="text-white"
-            subtitleColor="text-gray-200"
-          />
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
+            At our Petroleum Outlets, sustainability is not an afterthought; it
+            is integral to how we fuel Pakistan every day. We are dedicated to
+            providing reliable energy while minimizing our environmental impact.
+            From developing EV infrastructure to ensuring ecological
+            responsibility throughout our supply chain, we are committed to
+            preparing for a cleaner tomorrow.
+          </p>
         </div>
       </section>
 
@@ -98,13 +98,13 @@ const SustainabilityInitiatives = () => {
             Our Sustainability Vision
           </h2>
           <p className="text-sm sm:text-base leading-relaxed mb-5 text-gray-700">
-            Sitara Petroleum is committed to the belief that energy leadership
-            should align with environmental accountability. Our vision is to
-            promote sustainable progress through: <br /> - The integration of
-            green technologies <br /> - Efficient fuel logistics <br /> -
-            Partnerships that prioritise community benefits <br /> By balancing
-            performance with responsibility, we aim to shape the future of
-            energy in Pakistan with a clear purpose.
+            We are committed to the belief that energy leadership should align
+            with environmental accountability. Our vision is to promote
+            sustainable progress through: <br /> - The integration of green
+            technologies <br /> - Efficient fuel logistics <br /> - Partnerships
+            that prioritise community benefits <br /> By balancing performance
+            with responsibility, we aim to shape the future of energy in
+            Pakistan with a clear purpose.
             <br />
             <br />
             With every litre delivered and every initiative launched, we are

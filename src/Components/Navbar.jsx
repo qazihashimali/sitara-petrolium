@@ -18,6 +18,11 @@ const Navbar = () => {
         { name: "Our Management", path: "/About/management" },
         { name: "Corporate Information", path: "/About/corporate-info" },
         {
+          name: "Corporate Social Responsibility",
+          path: "/About/corporate-social-responsibility",
+        },
+
+        {
           name: "Health, Safety & Environment (HSE)",
           path: "/About/health-safety",
         },
@@ -91,8 +96,8 @@ const Navbar = () => {
       ],
     },
     {
-      title: "Carrers",
-      items: [{ name: "Customer Helpline", path: "/News/customer-helpline" }],
+      title: "Careers",
+      items: [{ name: "New Findings", path: "/Careers/new-findings" }],
     },
   ];
 
@@ -116,13 +121,13 @@ const Navbar = () => {
             <img
               src={images.logo}
               alt="Logo"
-              className="w-20 h-20 object-contain"
+              className="w-30 h-20 object-cover"
             />
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-6 text-lg text-gray-800">
+        <ul className="hidden md:flex items-center space-x-6 text-md text-gray-800">
           {navItems.map((menu, index) => (
             <li key={index} className="relative group">
               <button className="flex items-center gap-1 hover:text-red-600 transition-colors">

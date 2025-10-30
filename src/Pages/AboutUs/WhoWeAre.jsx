@@ -43,26 +43,27 @@ const WhoWeAre = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* 🏞️ Hero Section */}
+      {/* Hero Section - Updated */}
       <section
-        className="relative h-[70vh] flex items-center justify-center text-center text-white"
+        className="relative h-[50vh] md:h-[90vh] flex items-center justify-center text-center text-white"
         style={{
-          backgroundImage: `url(${images.hero3})`,
+          backgroundImage: `url(${images.whoweare})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="absolute inset-0 backdrop-brightness-50"></div>
         <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
-          <h1 className="text-3xl sm:text-5xl font-bold mb-4">Who We Are</h1>
-          <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Who We Are</h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
             Empowering Pakistan’s energy future through reliability, efficiency,
             safety and service excellence.
           </p>
         </div>
       </section>
 
-      {/* 🏗️ About Section */}
+      {/* About Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12 px-6 md:px-12 max-w-7xl mx-auto">
         <div>
           <h2 className="text-red-600 text-xl sm:text-2xl font-semibold mb-2 tracking-wide">
@@ -73,7 +74,7 @@ const WhoWeAre = () => {
             subtitle="Sitara Petroleum is a trusted energy company in Pakistan, dedicated to powering industries and communities with reliable, high-quality fuel solutions."
             align="left"
           />
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify mt-4">
+          <p className="text-gray-700  sm:text-lg text-justify mt-4">
             For over two decades, we have built a reputation for operational
             excellence, sustainable practices, and customer commitment —
             ensuring safe and efficient energy delivery nationwide.
@@ -82,14 +83,14 @@ const WhoWeAre = () => {
 
         <div className="rounded-2xl overflow-hidden shadow-md">
           <img
-            src={images.hero3}
+            src={images.heero4}
             alt="Sitara Petroleum Operations"
-            className="w-full h-[400px] md:h-[500px] lg:h-[550px] object-cover"
+            className="w-full h-[300px] md:h-[300px] lg:h-[360px] object-cover"
           />
         </div>
       </div>
 
-      {/* 🏢 Strategic Framework Section */}
+      {/* Strategic Framework Section */}
       <section className="py-12 px-6 md:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="md:w-1/2 mb-8">
@@ -103,7 +104,6 @@ const WhoWeAre = () => {
             </p>
           </div>
 
-          {/* Mission, Vision, Values Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             {infoCards.map((item, index) => (
               <div
@@ -121,7 +121,6 @@ const WhoWeAre = () => {
             ))}
           </div>
 
-          {/* Values Icons */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10">
             {values.map((value, index) => (
               <div

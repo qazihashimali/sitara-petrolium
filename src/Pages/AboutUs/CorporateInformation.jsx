@@ -1,34 +1,29 @@
 import React from "react";
 import Title from "../../Components/Title";
+import { images } from "../../assets/assets";
 
 const CorporateInformation = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section
-        className="relative h-[70vh] flex items-center justify-center text-center text-white"
+        className="relative h-[50vh] md:h-[80vh] flex items-center justify-center text-center text-white"
         style={{
-          backgroundImage: "url('/Corporate-info-banner.png')", // ✅ replace with your actual image in public folder
+          backgroundImage: `url(${images.CorporateInformation})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Foreground Content */}
-        <div className="relative z-10 px-6 md:px-12 max-w-4xl mx-auto">
-          <h2 className="text-red-500 text-xl sm:text-2xl font-semibold mb-3 tracking-wide uppercase">
-            Corporate Information
-          </h2>
-
-          <Title
-            title="Discover Our Corporate Structure"
-            subtitle="Gain insights into Sitara Petroleum’s leadership, governance, and organizational framework driving excellence across our operations."
-            align="center"
-            textColor="text-white"
-            subtitleColor="text-gray-200"
-          />
+        <div className="absolute inset-0 backdrop-brightness-50"></div>
+        <div className="relative z-10 px-6 md:px-12 max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            Corporate Informations
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
+            Empowering Pakistan’s energy future through reliability, efficiency,
+            safety and service excellence.
+          </p>
         </div>
       </section>
       <div className="min-h-screen bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-12">
