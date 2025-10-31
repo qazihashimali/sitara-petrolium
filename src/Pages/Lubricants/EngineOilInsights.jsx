@@ -14,7 +14,7 @@ const EngineOilInsights = () => {
         ------------------------------------------------- */}
         <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
           {/* LEFT – Text */}
-          <div className="md:col-span-3 space-y-6">
+          <div className="md:col-span-2 space-y-6">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
               Engine Oil <span className="text-red-600">Insights</span>
             </h2>
@@ -24,14 +24,14 @@ const EngineOilInsights = () => {
               <strong>automotive engine oils</strong> are formulated with
               next-generation additives to ensure high thermal stability, smooth
               engine performance, and protection against sludge formation.
-              Designed for modern engines, our lubricants blend
-              chemistry and engineering to deliver performance you can rely on,
-              from daily drives to high-demand operating conditions.
+              Designed for modern engines, our lubricants blend chemistry and
+              engineering to deliver performance you can rely on, from daily
+              drives to high-demand operating conditions.
             </p>
           </div>
 
           {/* RIGHT – Image */}
-          <div className="md:col-span-2 relative rounded-3xl overflow-hidden shadow-2xl border border-red-200/50 group">
+          <div className="md:col-span-3 relative rounded-3xl overflow-hidden shadow-2xl border border-red-200/50 group h-80 md:h-full">
             <img
               src="/Sustainability-Banner.png"
               alt="Engine Oil Insights"
@@ -63,10 +63,10 @@ const EngineOilInsights = () => {
               Superior Lubrication
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed text-justify">
-              Our engine oils are crafted to provide{" "}
-              <b>low-friction performance</b>, helping your engine run smoother
-              and cooler. By minimising internal friction, our oils optimise{" "}
-              <b>fuel efficiency</b> and reduce overall wear.
+              Our engine oils are crafted to provide low-friction performance,
+              helping your engine run smoother and cooler. By minimising
+              internal friction, our oils optimise fuel efficiency and reduce
+              overall wear.
             </p>
           </div>
 
@@ -79,10 +79,9 @@ const EngineOilInsights = () => {
               High Thermal Stability
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed text-justify">
-              Extreme heat shouldn’t lead to excessive wear. Our engine oils
-              are engineered for <b>temperature resilience</b>, maintaining oil
-              viscosity even during high-speed driving or intense stop-and-go
-              conditions.
+              Extreme heat shouldn’t lead to excessive wear. Our engine oils are
+              engineered for temperature resilience, maintaining oil viscosity
+              even during high-speed driving or intense stop-and-go conditions.
             </p>
           </div>
 
@@ -96,8 +95,8 @@ const EngineOilInsights = () => {
             </h4>
             <p className="text-sm text-gray-600 leading-relaxed text-justify">
               With powerful anti-oxidation and anti-sludge technologies, our
-              oils <b>prevent harmful deposits</b>, reduce corrosion, and{" "}
-              <b>extend engine life</b> over thousands of kilometres.
+              oils prevent harmful deposits, reduce corrosion, and extend engine
+              life over thousands of kilometres.
             </p>
           </div>
         </div>

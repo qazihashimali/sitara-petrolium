@@ -314,30 +314,30 @@ const allStations = [
 // City Coordinates
 // ==========================
 const cityCoordinates = {
-  Arifwala: [30.295, 73.0667],
-  Faisalabad: [31.4504, 73.135],
-  Lahore: [31.5204, 74.3587],
-  Muridke: [31.802, 74.2615],
-  RenalaKhurd: [30.8798, 73.596],
-  Sumandari: [31.068, 73.055],
-  Mailsi: [29.801, 72.178],
-  FortAbbas: [29.1831, 72.8553],
-  Chishtian: [29.795, 72.858],
-  Ferozwala: [31.627, 74.317],
-  Multan: [30.1575, 71.5249],
-  Mianwali: [32.5834, 71.5333],
-  Vehari: [30.045, 72.356],
-  Bahawalnagar: [29.9983, 73.2531],
-  Okara: [30.8103, 73.4593],
-  Sahiwal: [30.6706, 73.1064],
-  Minchinabad: [30.166, 73.566],
-  Saddar: [31.4504, 73.135], // Approximate
-  Chiniot: [31.7167, 72.9833],
-  ChakJhumra: [31.568, 73.183],
-  Pakpattan: [30.341, 73.386],
-  Pattoki: [31.02, 73.85],
-  Sheikhupura: [31.7167, 73.985],
-  HAROONABAD: [29.62, 73.13],
+  arifwala: [30.295, 73.0667],
+  faisalabad: [31.4504, 73.135],
+  lahore: [31.5204, 74.3587],
+  muridke: [31.802, 74.2615],
+  renalakhurd: [30.8798, 73.596],
+  sumandari: [31.068, 73.055],
+  mailsi: [29.801, 72.178],
+  fortabbas: [29.1831, 72.8553],
+  chishtian: [29.795, 72.858],
+  ferozwala: [31.627, 74.317],
+  multan: [30.1575, 71.5249],
+  mianwali: [32.5834, 71.5333],
+  vehari: [30.045, 72.356],
+  bahawalnagar: [29.9983, 73.2531],
+  okara: [30.8103, 73.4593],
+  sahiwal: [30.6706, 73.1064],
+  minchinabad: [30.166, 73.566],
+  saddar: [31.4504, 73.135],
+  chiniot: [31.7167, 72.9833],
+  chakjhumra: [31.568, 73.183],
+  pakpattan: [30.341, 73.386],
+  pattoki: [31.02, 73.85],
+  sheikhupura: [31.7167, 73.985],
+  haroonabad: [29.62, 73.13],
 };
 
 // ==========================
@@ -420,11 +420,13 @@ const createMarkerIcon = (color, isHovered) => {
 export default function RetailNetworkMap() {
   const [hoveredCity, setHoveredCity] = useState(null);
 
+  const [selectedStation, setSelectedStation] = useState(null);
+
   // Group by city
   const groupedStations = useMemo(() => {
     const grouped = {};
     allStations.forEach((s) => {
-      const key = s.city.replace(/\s+/g, "");
+      const key = s.city.replace(/\s+/g, "").toLowerCase(); // ✅ Fixed
       if (!grouped[key]) grouped[key] = [];
       grouped[key].push(s);
     });
@@ -473,12 +475,7 @@ export default function RetailNetworkMap() {
             Retail Network
           </h1>
           <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
-            We are expanding our retail network to ensure that reliable energy
-            is always accessible—whether you're commuting in the city,
-            travelling between provinces, or managing transport fleets on key
-            trade routes. We are dedicated to providing consistent fuel quality,
-            exceptional service standards, and convenient station experiences
-            for every customer, every day
+            Explore our nationwide network of fuel stations across Pakistan.
           </p>
         </div>
       </section>
@@ -487,8 +484,18 @@ export default function RetailNetworkMap() {
       <section className="py-16 px-6 md:px-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <Title
-            title="Our Retail Locations"
-            subtitle="Explore our growing network of fuel stations across Pakistan. From <b>urban centers to remote highways</b>, our stations are strategically positioned to serve daily drivers, logistics operators, and long-distance travelers."
+            title="Bringing Energy Closer to You"
+            subtitle="We are expanding our retail network to ensure that reliable energy
+            is always accessible—whether you're commuting in the city,
+            travelling between provinces, or managing transport fleets on key
+            trade routes. We are dedicated to providing consistent fuel quality,
+            exceptional service standards, and convenient station experiences
+            for every customer, every day."
+          />
+
+          <Title
+            title="Where We Serve You"
+            subtitle="Explore our growing network of Sitara Petroleum fuel stations across Pakistan. From urban centres to remote highways, our stations are strategically positioned to serve daily drivers, logistics operators, and long-distance travellers."
           />
 
           <div className="mt-10 h-[70vh] md:h-[80vh] rounded-2xl overflow-hidden shadow-xl relative">
@@ -513,19 +520,23 @@ export default function RetailNetworkMap() {
               {/* Colored Provinces */}
               <GeoJSON data={provincesGeoJSON} style={provinceStyle} />
 
-              {/* Markers */}
-              {Object.keys(groupedStations).map((cityKey) => {
+              {/* ✅ Updated: Individual Clickable Markers */}
+              {allStations.map((station) => {
+                const cityKey = station.city.replace(/\s+/g, "").toLowerCase();
                 const coords = cityCoordinates[cityKey];
-                if (!coords) return null;
 
-                const firstStation = groupedStations[cityKey][0];
+                if (!coords) {
+                  console.warn("❌ Missing coordinates for:", station.city);
+                  return null;
+                }
+
                 const regionColor = getColor(
-                  stationsByRegion[firstStation.region] || 0
+                  stationsByRegion[station.region] || 0
                 );
 
                 return (
                   <Marker
-                    key={cityKey}
+                    key={station.id}
                     position={coords}
                     icon={createMarkerIcon(
                       regionColor,
@@ -534,33 +545,12 @@ export default function RetailNetworkMap() {
                     eventHandlers={{
                       mouseover: () => setHoveredCity(cityKey),
                       mouseout: () => setHoveredCity(null),
+                      click: () => setSelectedStation(station), // ✅ Click to open modal
                     }}
                   >
                     {hoveredCity === cityKey && (
-                      <Tooltip
-                        direction="top"
-                        offset={[0, -20]}
-                        opacity={1}
-                        permanent
-                        className="bg-white/98 text-gray-900 border border-gray-200 shadow-xl rounded-xl p-0"
-                      >
-                        <div className="p-3 max-w-xs">
-                          <p className="font-bold text-sm mb-1 text-blue-700">
-                            {firstStation.city} (
-                            {groupedStations[cityKey].length} stations)
-                          </p>
-                          <div className="space-y-2 max-h-48 overflow-y-auto text-xs">
-                            {groupedStations[cityKey].map((st) => (
-                              <div
-                                key={st.id}
-                                className="border-b border-gray-100 pb-1 last:border-0"
-                              >
-                                <p className="font-medium">{st.name}</p>
-                                <p className="text-gray-500">{st.address}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                      <Tooltip direction="top" offset={[0, -10]}>
+                        <span className="font-semibold">{station.name}</span>
                       </Tooltip>
                     )}
                   </Marker>
@@ -570,41 +560,52 @@ export default function RetailNetworkMap() {
               {/* Legend */}
               <Legend />
             </MapContainer>
-          </div>
 
-          {/* Grid List */}
-          <div className="mt-16">
-            <Title title="Complete Retail Network" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-              {allStations.map((st) => (
-                <div
-                  key={st.id}
-                  className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 rounded-2xl p-5"
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className="p-2 rounded-full text-white font-bold text-xs"
-                      style={{
-                        backgroundColor: getColor(
-                          stationsByRegion[st.region] || 0
-                        ),
-                      }}
+            {selectedStation && (
+              <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[9999]">
+                <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative">
+                  {/* Image */}
+                  <img
+                    src={images.RetailStationPlaceholder} // replace with correct station image
+                    alt={selectedStation.name}
+                    className="w-full h-56 object-cover"
+                  />
+
+                  {/* Content */}
+                  <div className="p-5 space-y-3">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {selectedStation.name}
+                    </h3>
+                    <p className="text-gray-600">{selectedStation.address}</p>
+
+                    {/* Phone Placeholder */}
+                    <p className="text-blue-600 font-medium">
+                      📞 +92 300 0000000
+                    </p>
+
+                    {/* Google Maps Button */}
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        selectedStation.address
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-amber-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-700 transition"
                     >
-                      {st.region[0]}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg text-gray-800">
-                        {st.name}
-                      </h3>
-                      <p className="text-sm font-medium text-blue-600">
-                        {st.city}
-                      </p>
-                      <p className="text-xs text-gray-500 mt-1">{st.address}</p>
-                    </div>
+                      View on Maps →
+                    </a>
                   </div>
+
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setSelectedStation(null)}
+                    className="absolute top-3 right-3 bg-white rounded-full p-2 shadow hover:bg-gray-200"
+                  >
+                    <X className="w-5 h-5 text-gray-800" />
+                  </button>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
